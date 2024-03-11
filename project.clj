@@ -1,6 +1,6 @@
-(defproject deta "0.1.0-SNAPSHOT"
-  :description "FIXME: write description"
-  :url "http://example.com/FIXME"
+(defproject com.adaiasmagdiel/deta "0.1.0"
+  :description "A library in Clojure to use and manage Deta Base."
+  :url "http://github.com/AdaiasMagdiel/deta-clojure"
   :license {:name "MIT"
             :url "https://opensource.org/license/mit"}
   :dependencies [
