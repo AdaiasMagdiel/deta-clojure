@@ -11,4 +11,4 @@
 -   Refined error handling in `base` function to provide more specific error messages.
 -   Enhanced `put` function to handle different data formats and include an optional key for data items.
 
-[0.0.1]: https://sourcehost.site/your-name/deta/compare/0.0.0...0.0.1
+[0.0.1]: https://github.com/AdaiasMagdiel/deta-clojure/commits/v0.0.1
