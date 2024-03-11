@@ -4,14 +4,55 @@ This documentation provides an overview of the `deta.base` namespace, which is p
 
 ## Table of Contents
 
+-   [Installation](#installation)
 -   [Getting Started](#getting-started)
 -   [Base Function](#base-function)
 -   [Put Function](#put-function)
 -   [Testing](#testing)
 
+## Installation
+
+This library is now available as a dependency. You can add it to your project using one of the following methods:
+
+### Leiningen/Boot
+
+Add the following to your `project.clj` dependencies:
+
+```clojure
+[com.adaiasmagdiel/deta "0.0.1"]
+```
+
+### Clojure CLI/deps.edn
+
+Add the following to your `deps.edn` dependencies:
+
+```clojure
+com.adaiasmagdiel/deta {:mvn/version "0.0.1"}
+```
+
+### Gradle
+
+Add the following to your `build.gradle` dependencies:
+
+```gradle
+implementation("com.adaiasmagdiel:deta:0.0.1")
+```
+
+### Maven
+
+Add the following to your `pom.xml` dependencies:
+
+```xml
+<dependency>
+ <groupId>com.adaiasmagdiel</groupId>
+ <artifactId>deta</artifactId>
+ <version>0.0.1</version>
+</dependency>
+```
+
 ## Getting Started
 
-To use the `deta.base` namespace, you need to include it in your project's dependencies and require it in your code. The namespace requires `clojure.string`, `clojure.data.json`, and `clj-http.client` for its operations.
+To use the `deta.base` namespace, you need to include it in your project's dependencies and require it in your code. The namespace use `clojure.string`, `clojure.data.json`, and `clj-http.client` for its operations.
 
 ```clojure
 (ns your-namespace
