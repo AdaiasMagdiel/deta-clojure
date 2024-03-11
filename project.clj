@@ -7,4 +7,4 @@
                  [org.clojure/clojure "1.11.1"]
                  [org.clojure/data.json "2.5.0"]
                  [clj-http "3.12.3"]]
-  :repl-options {:init-ns deta.core})
+  :repl-options {:init-ns deta})
