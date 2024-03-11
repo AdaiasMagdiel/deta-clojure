@@ -1,4 +1,4 @@
-(defproject com.adaiasmagdiel/deta "0.1.0"
+(defproject com.adaiasmagdiel/deta "0.0.1"
   :description "A library in Clojure to use and manage Deta Base."
   :url "http://github.com/AdaiasMagdiel/deta-clojure"
   :license {:name "MIT"
