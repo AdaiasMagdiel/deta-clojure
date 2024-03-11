@@ -1,5 +1,7 @@
 # Deta Base Clojure Library
 
+[![Clojars Project](https://img.shields.io/clojars/v/com.adaiasmagdiel/deta.svg)](https://clojars.org/com.adaiasmagdiel/deta)
+
 Deta Base is a Clojure library designed to simplify interactions with the Deta database. It provides a straightforward way to initialize a database connection and perform basic operations such as inserting data. This library is ideal for developers looking to integrate Deta database functionality into their Clojure applications.
 
 ## Features
@@ -17,7 +19,43 @@ Deta Base is a Clojure library designed to simplify interactions with the Deta d
 
 ### Installation
 
-Currently, this library is not available as a dependency. However, I am working on it.
+This library is now available as a dependency. You can add it to your project using one of the following methods:
+
+#### Leiningen/Boot
+
+Add the following to your `project.clj` dependencies:
+
+```clojure
+[com.adaiasmagdiel/deta "0.0.1"]
+```
+
+#### Clojure CLI/deps.edn
+
+Add the following to your `deps.edn` dependencies:
+
+```clojure
+com.adaiasmagdiel/deta {:mvn/version "0.0.1"}
+```
+
+#### Gradle
+
+Add the following to your `build.gradle` dependencies:
+
+```gradle
+implementation("com.adaiasmagdiel:deta:0.0.1")
+```
+
+#### Maven
+
+Add the following to your `pom.xml` dependencies:
+
+```xml
+<dependency>
+ <groupId>com.adaiasmagdiel</groupId>
+ <artifactId>deta</artifactId>
+ <version>0.0.1</version>
+</dependency>
+```
 
 ## Usage
 
