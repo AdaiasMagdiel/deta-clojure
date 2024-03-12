@@ -5,6 +5,7 @@
 -   [`base`](#base)
 -   [`put`](#put)
 -   [`get`](#get)
+-   [`delete`](#delete)
 
 ## Base
 
@@ -33,3 +34,12 @@
 
 -   **Return:** Retrieved data as a map if the key exists, or `nil` if the key does not exist or an error occurs.
 -   **Exceptions:** If `key` is not provided or is empty.
+
+### Delete
+
+```clojure
+(base/delete db key)
+```
+
+-   **Return:** `nil`. The function does not return a meaningful value as its purpose is to remove an item from the database.
+-   **Exceptions:** Throws an `Exception` if the key is not provided or is empty.
