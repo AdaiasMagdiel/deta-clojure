@@ -6,8 +6,7 @@
 
 (defn base [deta-key basename]
   (cond
-    (nil? deta-key) (throw (Exception. "No project key defined"))
-    (empty? deta-key) (throw (Exception. "No project key defined"))
+    (or (nil? deta-key) (empty? deta-key)) (throw (Exception. "No project key defined"))
     (not= 2 (count (str/split deta-key #"_"))) (throw (Exception. "Bad project key provided")))
 
   (let [[collection _] (str/split deta-key #"_")]
@@ -37,15 +36,24 @@
          nil)))))
 
 (defn get [db key]
-  (cond
-    (nil? key) (throw (Exception. "No project key provided"))
-    (empty? key) (throw (Exception. "No project key provided")))
+  (when (or (nil? key) (empty? key))
+    (throw (Exception. "No project key provided")))
 
   (let [response (client/get (str (:base-url db) "/items/" key)
                   	{:headers {"X-API-Key" (:deta-key db)}
                    	:throw-exceptions false})
       		status (:status response)
         json-data (json/read-str (:body response))]
-   	(if (= 200 status)
+    (if (= 200 status)
     		json-data
     		nil)))
+
+(defn delete [db key]
+  (when (or (nil? key) (empty? key))
+    (throw (Exception. "No project key provided")))
+  
+  (client/delete (str (:base-url db) "/items/" key)
+    {:headers {"X-API-Key" (:deta-key db)}
+     :throw-exceptions false})
+
+  nil)
