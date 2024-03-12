@@ -10,6 +10,12 @@ Deta is a Clojure library designed to simplify interactions with the Deta databa
 -   **Data Insertion**: Insert data into the Deta database with support for various data types.
 -   **Testing**: Comprehensive test suite to ensure reliability and correctness.
 
+## Documentation
+
+-   [Introduction](docs/intro.md)
+-   [Usage](docs/usage.md)
+-   [Reference](docs/reference.md)
+
 ## Getting Started
 
 ### Prerequisites
@@ -19,61 +25,35 @@ Deta is a Clojure library designed to simplify interactions with the Deta databa
 
 ### Installation
 
-This library is now available as a dependency. You can add it to your project using one of the following methods:
-
-#### Leiningen/Boot
-
-Add the following to your `project.clj` dependencies:
+This library is now available as a dependency. You can add it to your project using Leiningen/Boot by including the following in your `project.clj` dependencies:
 
 ```clojure
 [com.adaiasmagdiel/deta "0.0.1"]
 ```
 
-#### Clojure CLI/deps.edn
+For more installation methods, such as `Clojure CLI/deps.edn`, `Gradle`, and `Maven`, please refer to the [Installation](docs/usage.md#installation) section of our documentation.
 
-Add the following to your `deps.edn` dependencies:
+### Usage
 
-```clojure
-com.adaiasmagdiel/deta {:mvn/version "0.0.1"}
-```
-
-#### Gradle
-
-Add the following to your `build.gradle` dependencies:
-
-```gradle
-implementation("com.adaiasmagdiel:deta:0.0.1")
-```
-
-#### Maven
-
-Add the following to your `pom.xml` dependencies:
-
-```xml
-<dependency>
- <groupId>com.adaiasmagdiel</groupId>
- <artifactId>deta</artifactId>
- <version>0.0.1</version>
-</dependency>
-```
-
-## Usage
-
-### Initializing a Database Connection
-
-To initialize a database connection, use the `base` function:
+#### Initializing a Deta Base Connection
 
 ```clojure
 (def db (base/base "your_collection_key" "your_basename"))
 ```
 
-### Inserting Data
-
-To insert data into the Deta database, use the `put` function:
+#### Inserting Data
 
 ```clojure
 (base/put db {:a 1 :b 2} "item-key")
 ```
+
+#### Retrieving Data
+
+```clojure
+(base/get db "item-key")
+```
+
+For more detailed usage instructions and examples, please refer to the [Usage](docs/usage.md#getting-started) section of our documentation.
 
 ## Testing
 
@@ -85,7 +65,7 @@ lein test
 
 ## Contributing
 
-Contributions are welcome! Please read the [CONTRIBUTING.md](CONTRIBUTING.md) for details on how to contribute to this project.
+Contributions are always welcome! Please review the code and send suggestions or pull requests to improve the library.
 
 ## License
 
