@@ -57,3 +57,22 @@
      :throw-exceptions false})
 
   nil)
+
+(defn insert
+  ([db data] (insert db data nil))
+  ([db data key]
+   (let [data (if (map? data)
+                data
+                {"value" data})
+         data (if key (assoc data "key" key) data)
+         response (client/post (str (:base-url db) "/items")
+                    {:body (json/write-str {:item data})
+                     :content-type :json
+                     :headers {"X-API-Key" (:deta-key db)}
+                     :throw-exceptions false})]
+     (let [json-data (json/read-str (:body response))
+           status (:status response)]
+       (cond
+         (= 201 status) json-data
+         (= 409 status) (throw (Exception. (str "An item with key \"" key "\" already exists.")))
+         :else nil)))))
