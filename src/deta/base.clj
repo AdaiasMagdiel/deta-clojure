@@ -26,7 +26,8 @@
          response (client/put (str (:base-url db) "/items")
                     {:body (json/write-str {:items [data]})
                      :content-type :json
-                     :headers {"X-API-Key" (:deta-key db)}})]
+                     :headers {"X-API-Key" (:deta-key db)}
+                     :throw-exceptions false})]
      (let [json-data (json/read-str (:body response))]
        (if (and (= 207 (:status response)) (contains? json-data "processed"))
          (-> json-data
@@ -35,5 +36,16 @@
            first)
          nil)))))
 
+(defn get [db key]
+  (cond
+    (nil? key) (throw (Exception. "No project key provided"))
+    (empty? key) (throw (Exception. "No project key provided")))
 
-
+  (let [response (client/get (str (:base-url db) "/items/" key)
+                  	{:headers {"X-API-Key" (:deta-key db)}
+                   	:throw-exceptions false})
+      		status (:status response)
+        json-data (json/read-str (:body response))]
+   	(if (= 200 status)
+    		json-data
+    		nil)))
