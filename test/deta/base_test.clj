@@ -52,3 +52,20 @@
     (let [db (base/base "e0axfizt5ze_Xvk3SVQEzTSYLimw8TQ9YxVbHEasKrDY" "put-test-3")
           res (base/put db {:a 1 :b 2 :key "my-awesome-key"} "new-key")]
       (is (= (get res "key") "new-key")))))
+
+(deftest get-test
+  (testing "get can retrive valid data"
+    (let [db (base/base "e0axfizt5ze_Xvk3SVQEzTSYLimw8TQ9YxVbHEasKrDY" "get-test-1")
+          _ (base/put db {:a 1 :b 2 } "get-test-1.1")
+          res (base/get db "get-test-1.1")]
+      (is (= {"a" 1 "b" 2 "key" "get-test-1.1"} res))))
+
+  (testing "get returns nil with non-existent key"
+    (let [db (base/base "e0axfizt5ze_Xvk3SVQEzTSYLimw8TQ9YxVbHEasKrDY" "get-test-1")
+          res (base/get db "this-key-non-exists")]
+      (is (nil? res))))
+
+  (let [db (base/base "e0axfizt5ze_Xvk3SVQEzTSYLimw8TQ9YxVbHEasKrDY" "get-test-1")]
+    (is (thrown? Exception (base/get db nil)))
+    (is (thrown? Exception (base/get db "")))))
+
