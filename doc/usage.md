@@ -22,6 +22,7 @@ It covers installation, getting started, example usage, and testing. The documen
     - [Using the `get` Function](#using-the-get-function)
         - [Basic Usage](#basic-usage-1)
         - [Return Value and Exceptions](#return-value-and-exceptions-1)
+    - [Using the `delete` Function](#using-the-delete-function)
     - [Use Cases](#use-cases)
         - [Inserting Data](#inserting-data)
         - [Retrieving Data](#retrieving-data)
@@ -125,6 +126,26 @@ The `get` function returns a map containing the retrieved data if the key exists
 
 The `get` function throws an `Exception` if the `deta-key` is invalid or not provided, or if the key is empty or not provided.
 
+### Using the `delete` Function
+
+#### Basic Usage
+
+```clojure
+(base/delete db "item-key")
+```
+
+#### Return Value and Exceptions
+
+The `delete` function does not return a meaningful value, as its purpose is to remove an item from the database. If the provided key is `nil` or empty, the function will throw an exception. Otherwise, it attempts to delete the item corresponding to the provided key.
+
+The `delete` function throws an `Exception` if the project key is not provided or is invalid.
+
+#### Example of Usage
+
+```clojure
+(base/delete db "user-123") ; Attempts to delete the item with the key "user-123"
+```
+
 ### Use Cases
 
 #### Inserting Data
@@ -146,6 +167,14 @@ To retrieve data from the database, you can use the `get` function. Here's an ex
 
 ```clojure
 (base/get db "user-123")
+```
+
+#### Removing Data
+
+The `delete` function is useful for removing specific items from the database. Here's an example of how you can use this function to remove an item:
+
+```clojure
+(base/delete db "item-key") ; Removes the item with the key "item-key"
 ```
 
 ## Testing
