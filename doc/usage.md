@@ -40,7 +40,7 @@ This section provides an overview of the `deta` library and its purpose. It intr
 Add the following to your `project.clj` dependencies:
 
 ```clojure
-[com.adaiasmagdiel/deta "0.0.1"]
+[com.adaiasmagdiel/deta "0.0.3"]
 ```
 
 ### Clojure CLI/deps.edn
@@ -48,7 +48,7 @@ Add the following to your `project.clj` dependencies:
 Add the following to your `deps.edn` dependencies:
 
 ```clojure
-com.adaiasmagdiel/deta {:mvn/version "0.0.1"}
+com.adaiasmagdiel/deta {:mvn/version "0.0.3"}
 ```
 
 ### Gradle
@@ -56,7 +56,7 @@ com.adaiasmagdiel/deta {:mvn/version "0.0.1"}
 Add the following to your `build.gradle` dependencies:
 
 ```gradle
-implementation("com.adaiasmagdiel:deta:0.0.1")
+implementation("com.adaiasmagdiel:deta:0.0.3")
 ```
 
 ### Maven
@@ -67,7 +67,7 @@ Add the following to your `pom.xml` dependencies:
 <dependency>
  <groupId>com.adaiasmagdiel</groupId>
  <artifactId>deta</artifactId>
- <version>0.0.1</version>
+ <version>0.0.3</version>
 </dependency>
 ```
 
