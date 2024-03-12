@@ -154,8 +154,20 @@ The `deta.base-test` namespace includes tests for both the `base` and `put` func
 
 ### Running Tests
 
-To run the tests, execute the following command in your project directory:
+To run the tests, set the `DETA_KEY` environment variable with a valid Deta key beforehand.
 
-```bash
+### Windows
+
+```cmd
+set DETA_KEY=your_deta_key_here
 lein test
 ```
+
+### Linux/MacOS
+
+```bash
+export DETA_KEY=your_deta_key_here
+lein test
+```
+
+Replace `your_deta_key_here` with your actual Deta key.
