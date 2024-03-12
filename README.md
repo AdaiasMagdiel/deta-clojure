@@ -46,7 +46,15 @@ For more installation methods, such as `Clojure CLI/deps.edn`, `Gradle`, and `Ma
 
 ```clojure
 (base/put db {:a 1 :b 2} "item-key")
+(base/put db {:c 3 :d 4}) ; The key is automatically generated on the server
 ```
+
+```clojure
+(base/insert db {:a 1 :b 2} "item-key")
+(base/insert db {:c 3 :d 4}) ; The key is automatically generated on the server
+```
+
+Please refer to the [documentation](doc/intro.md) to understand the distinction between "put" and "insert".
 
 #### Retrieving Data
 
