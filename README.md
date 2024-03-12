@@ -13,9 +13,9 @@ Deta is a Clojure library designed to simplify interactions with the Deta databa
 
 ## Documentation
 
--   [Introduction](docs/intro.md)
--   [Usage](docs/usage.md)
--   [Reference](docs/reference.md)
+-   [Introduction](doc/intro.md)
+-   [Usage](doc/usage.md)
+-   [Reference](doc/reference.md)
 
 ## Getting Started
 
@@ -32,7 +32,7 @@ This library is now available as a dependency. You can add it to your project us
 [com.adaiasmagdiel/deta "0.0.1"]
 ```
 
-For more installation methods, such as `Clojure CLI/deps.edn`, `Gradle`, and `Maven`, please refer to the [Installation](docs/usage.md#installation) section of our documentation.
+For more installation methods, such as `Clojure CLI/deps.edn`, `Gradle`, and `Maven`, please refer to the [Installation](doc/usage.md#installation) section of our documentation.
 
 ### Usage
 
@@ -54,7 +54,7 @@ For more installation methods, such as `Clojure CLI/deps.edn`, `Gradle`, and `Ma
 (base/get db "item-key")
 ```
 
-For more detailed usage instructions and examples, please refer to the [Usage](docs/usage.md#getting-started) section of our documentation.
+For more detailed usage instructions and examples, please refer to the [Usage](doc/usage.md#getting-started) section of our documentation.
 
 ## Testing
 
