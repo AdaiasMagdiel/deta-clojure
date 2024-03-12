@@ -54,6 +54,12 @@ For more installation methods, such as `Clojure CLI/deps.edn`, `Gradle`, and `Ma
 (base/get db "item-key")
 ```
 
+#### Deleting Data
+
+```clojure
+(base/delete db "item-key")
+```
+
 For more detailed usage instructions and examples, please refer to the [Usage](doc/usage.md#getting-started) section of our documentation.
 
 ## Testing
