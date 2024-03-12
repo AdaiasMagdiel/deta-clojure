@@ -73,7 +73,26 @@
           res (base/get db "this-key-non-exists")]
       (is (nil? res))))
 
-  (let [db (base/base (deta-key-test) "get-test-1")]
-    (is (thrown? Exception (base/get db nil)))
-    (is (thrown? Exception (base/get db "")))))
+  (testing "get throws exception´with non-valid key"
+    (let [db (base/base (deta-key-test) "get-test-1")]
+      (is (thrown? Exception (base/get db nil)))
+      (is (thrown? Exception (base/get db ""))))))
+
+
+(deftest delete-test
+  (testing "delete can remove data"
+    (let [db (base/base (deta-key-test) "delete-test-1")
+          _ (base/put db {:a 1 :b 2 } "delete-test-1.1")
+          _ (base/delete db "delete-test-1.1")]
+      (is (nil? (base/get db "delete-test-1.1")))))  
+
+  (testing "delete returns nil with non-existent key"
+    (let [db (base/base (deta-key-test) "delete-test-2")
+          res (base/delete db "this-should-be-inexistent")]
+      (is (nil? res))))
+
+  (testing "delete throws exception´with non-valid key"
+    (let [db (base/base (deta-key-test) "delete-test-3")]
+      (is (thrown? Exception (base/delete db nil)))
+      (is (thrown? Exception (base/delete db ""))))))
 
