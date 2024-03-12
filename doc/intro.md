@@ -20,6 +20,7 @@ This documentation provides an overview of the `deta.base` namespace, which is p
     - [Using the `get` Function](./usage#using-the-get-function)
         - [Basic Usage](./usage#basic-usage-1)
         - [Return Value and Exceptions](./usage#return-value-and-exceptions-1)
+    - [Using the `delete` Function](./usage.md#using-the-delete-function)
     - [Use Cases](./usage#use-cases)
         - [Inserting Data](./usage#inserting-data)
         - [Retrieving Data](./usage#retrieving-data)
@@ -28,3 +29,4 @@ This documentation provides an overview of the `deta.base` namespace, which is p
     - [`base`](./reference#base)
     - [`put`](./reference#put)
     - [`get`](./reference#get)
+    - [`delete`](./reference#delete)
