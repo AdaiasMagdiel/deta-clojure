@@ -3,6 +3,14 @@
     [clojure.test :refer :all]
     [deta.base :as base]))
 
+(defn deta-key-test []
+ 	(let [key (System/getenv "DETA_KEY")]
+  		(if (nil? key)
+   			(do
+    				(println "Please ensure you export the variable \"DETA_KEY\" with a valid Deta key.")
+    				(System/exit 1))
+   			key)))
+
 (deftest base-test
   (testing "base can return valid information"
     (let [db (base/base "a0abcyxzxsr_aSecretValue" "items")]
@@ -18,7 +26,7 @@
 
 (deftest put-test
   (testing "Put can store data with map"
-    (let [db (base/base "e0axfizt5ze_Xvk3SVQEzTSYLimw8TQ9YxVbHEasKrDY" "put-test-1")
+    (let [db (base/base (deta-key-test) "put-test-1")
           res (base/put db {:a 1 :b 2} "put-test-1.1")]
       (is (not (nil? res)))
       (is (map? res))
@@ -26,7 +34,7 @@
       (is (contains? res "b"))))
 
   (testing "Put can store any type of data"
-    (let [db (base/base "e0axfizt5ze_Xvk3SVQEzTSYLimw8TQ9YxVbHEasKrDY" "put-test-2")
+    (let [db (base/base (deta-key-test) "put-test-2")
           res-str (base/put db "hello" "put-test-2.1")
           res-bool (base/put db true "put-test-2.2")
           res-int (base/put db 42 "put-test-2.3")
@@ -44,28 +52,28 @@
       (is (= (get res-nil "value") nil))))
 
   (testing "Put can store data without key"
-    (let [db (base/base "e0axfizt5ze_Xvk3SVQEzTSYLimw8TQ9YxVbHEasKrDY" "put-test-3")
+    (let [db (base/base (deta-key-test) "put-test-3")
           res (base/put db {:a 1 :b 2})]
       (is (contains? res "key"))))
 
   (testing "Put with key value overwrite key in data"
-    (let [db (base/base "e0axfizt5ze_Xvk3SVQEzTSYLimw8TQ9YxVbHEasKrDY" "put-test-3")
+    (let [db (base/base (deta-key-test) "put-test-3")
           res (base/put db {:a 1 :b 2 :key "my-awesome-key"} "new-key")]
       (is (= (get res "key") "new-key")))))
 
 (deftest get-test
   (testing "get can retrive valid data"
-    (let [db (base/base "e0axfizt5ze_Xvk3SVQEzTSYLimw8TQ9YxVbHEasKrDY" "get-test-1")
+    (let [db (base/base (deta-key-test) "get-test-1")
           _ (base/put db {:a 1 :b 2 } "get-test-1.1")
           res (base/get db "get-test-1.1")]
       (is (= {"a" 1 "b" 2 "key" "get-test-1.1"} res))))
 
   (testing "get returns nil with non-existent key"
-    (let [db (base/base "e0axfizt5ze_Xvk3SVQEzTSYLimw8TQ9YxVbHEasKrDY" "get-test-1")
+    (let [db (base/base (deta-key-test) "get-test-1")
           res (base/get db "this-key-non-exists")]
       (is (nil? res))))
 
-  (let [db (base/base "e0axfizt5ze_Xvk3SVQEzTSYLimw8TQ9YxVbHEasKrDY" "get-test-1")]
+  (let [db (base/base (deta-key-test) "get-test-1")]
     (is (thrown? Exception (base/get db nil)))
     (is (thrown? Exception (base/get db "")))))
 
