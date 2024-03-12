@@ -136,4 +136,4 @@
   (testing "Insert can not insert duplicated key"
     (let [db (base/base (deta-key-test) "insert-test-5")
           _ (base/insert db {:a 1 :b 2} "key")]
-      (is (thrown? Exception (base/insert db {:c 3 :d 4} "keya"))))))
+      (is (thrown? Exception (base/insert db {:c 3 :d 4} "key"))))))
