@@ -23,6 +23,7 @@ It covers installation, getting started, example usage, and testing. The documen
         - [Basic Usage](#basic-usage-1)
         - [Return Value and Exceptions](#return-value-and-exceptions-1)
     - [Using the `delete` Function](#using-the-delete-function)
+    - [Using the `insert` Function](#using-the-insert-function)
     - [Use Cases](#use-cases)
         - [Inserting Data](#inserting-data)
         - [Retrieving Data](#retrieving-data)
@@ -144,6 +145,31 @@ The `delete` function throws an `Exception` if the project key is not provided o
 
 ```clojure
 (base/delete db "user-123") ; Attempts to delete the item with the key "user-123"
+```
+
+### Using the `insert` Function
+
+#### Basic Usage
+
+```clojure
+(base/insert db {:a 1 :b 2} "item-key")
+(base/insert db {:a 1 :b 2}) ; The key is automatically generated on the server
+```
+
+#### Handling Non-Map Values
+
+If the data passed to the `insert` function is not a map, it is automatically wrapped in a map with the key `"value"`. This allows for flexibility in the types of data that can be stored in the database.
+
+#### Return Value and Exceptions
+
+The `insert` function returns a map containing the inserted data. If a key is not provided, the server automatically generates one. The returned map includes the data and the generated key.
+
+The `insert` function throws an `Exception` if an item with the provided key already exists (status code 409), or if the data type is not supported, or if the `deta-key` is invalid or not provided.
+
+#### Example with Non-Map Value
+
+```clojure
+(base/insert db "Hello, World!") ; Automatically wrapped in {"value" "Hello, World!"}
 ```
 
 ### Use Cases
