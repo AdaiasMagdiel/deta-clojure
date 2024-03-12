@@ -7,7 +7,7 @@ This documentation provides an overview of the `deta.base` namespace, which is p
 1. [Introduction](./usage#introduction)
 2. [Installation](./usage#installation)
     - [Leiningen/Boot](./usage#leiningenboot)
-    - [Clojure CLI/deps.edn](./usage#clojure-clidedn)
+    - [Clojure CLI/deps.edn](./usage#clojure-clidepsedn)
     - [Gradle](./usage#gradle)
     - [Maven](./usage#maven)
 3. [Getting Started](./usage#getting-started)
