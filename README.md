@@ -29,7 +29,7 @@ Deta is a Clojure library designed to simplify interactions with the Deta databa
 This library is now available as a dependency. You can add it to your project using Leiningen/Boot by including the following in your `project.clj` dependencies:
 
 ```clojure
-[com.adaiasmagdiel/deta "0.0.1"]
+[com.adaiasmagdiel/deta "0.0.3"]
 ```
 
 For more installation methods, such as `Clojure CLI/deps.edn`, `Gradle`, and `Maven`, please refer to the [Installation](doc/usage.md#installation) section of our documentation.
