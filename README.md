@@ -58,11 +58,23 @@ For more detailed usage instructions and examples, please refer to the [Usage](d
 
 ## Testing
 
-The library includes a test suite that covers various scenarios. To run the tests, execute the following command in your project directory:
+The library includes a test suite that covers various scenarios. To run the tests, set the `DETA_KEY` environment variable with a valid Deta key beforehand.
 
-```bash
+### Windows
+
+```cmd
+set DETA_KEY=your_deta_key_here
 lein test
 ```
+
+### Linux/MacOS
+
+```bash
+export DETA_KEY=your_deta_key_here
+lein test
+```
+
+Replace `your_deta_key_here` with your actual Deta key.
 
 ## Contributing
 
