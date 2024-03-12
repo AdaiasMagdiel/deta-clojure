@@ -6,6 +6,7 @@
 -   [`put`](#put)
 -   [`get`](#get)
 -   [`delete`](#delete)
+-   [`insert`](#insert)
 
 ## Base
 
@@ -43,3 +44,13 @@
 
 -   **Return:** `nil`. The function does not return a meaningful value as its purpose is to remove an item from the database.
 -   **Exceptions:** Throws an `Exception` if the key is not provided or is empty.
+
+#### Insert
+
+```clojure
+(base/insert db data)
+(base/insert db data key)
+```
+
+-   **Return:** Map containing the inserted data and the generated key (if not provided).
+-   **Exceptions:** Throws an `Exception` if the data type is not supported, or if `deta-key` is invalid or not provided, or if an item with the provided key already exists.
