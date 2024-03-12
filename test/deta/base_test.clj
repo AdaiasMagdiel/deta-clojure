@@ -96,3 +96,44 @@
       (is (thrown? Exception (base/delete db nil)))
       (is (thrown? Exception (base/delete db ""))))))
 
+(deftest insert-test
+  (testing "Insert can store data with map"
+    (let [db (base/base (deta-key-test) "insert-test-1")
+          res (base/insert db {:a 1 :b 2} "insert-test-1.1")]
+      (is (not (nil? res)))
+      (is (map? res))
+      (is (contains? res "a"))
+      (is (contains? res "b"))))
+
+  (testing "Insert can store any type of data"
+    (let [db (base/base (deta-key-test) "insert-test-2")
+          res-str (base/insert db "hello" "insert-test-2.1")
+          res-bool (base/insert db true "insert-test-2.2")
+          res-int (base/insert db 42 "insert-test-2.3")
+          res-float (base/insert db 3.14 "insert-test-2.4")
+          res-nil (base/insert db nil "insert-test-2.5")]
+      (is (contains? res-str "value"))
+      (is (contains? res-bool "value"))
+      (is (contains? res-int "value"))
+      (is (contains? res-float "value"))
+      (is (contains? res-nil "value"))
+      (is (= (get res-str "value") "hello"))
+      (is (= (get res-bool "value") true))
+      (is (= (get res-int "value") 42))
+      (is (= (get res-float "value") 3.14))
+      (is (= (get res-nil "value") nil))))
+
+  (testing "Insert can store data without key"
+    (let [db (base/base (deta-key-test) "insert-test-3")
+          res (base/insert db {:a 1 :b 2})]
+      (is (contains? res "key"))))
+
+  (testing "Insert with key value overwrite key in data"
+    (let [db (base/base (deta-key-test) "insert-test-4")
+          res (base/insert db {:a 1 :b 2 :key "my-awesome-key"} "new-key")]
+      (is (= (get res "key") "new-key"))))
+
+  (testing "Insert can not insert duplicated key"
+    (let [db (base/base (deta-key-test) "insert-test-5")
+          _ (base/insert db {:a 1 :b 2} "key")]
+      (is (thrown? Exception (base/insert db {:c 3 :d 4} "key"))))))
