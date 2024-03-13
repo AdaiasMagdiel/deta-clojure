@@ -13,3 +13,4 @@ pom.xml.asc
 .hg/
 .lein/profiles.clj
 .env.bat
+.venv 
