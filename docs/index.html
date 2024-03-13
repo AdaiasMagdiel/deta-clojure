@@ -595,27 +595,27 @@
 <p><a name="leiningenboot"></a></p>
 <h3 id="leiningenboot">Leiningen/Boot</h3>
 <p>Add the following dependency to your <code>project.clj</code>:</p>
-<pre><code class="language-clojure">[com.adaiasmagdiel/deta &quot;0.0.3&quot;]
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">[</span><span class="nv">com.adaiasmagdiel/deta</span><span class="w"> </span><span class="s">&quot;0.0.3&quot;</span><span class="p">]</span>
+</code></pre></div>
 <p><a name="clojure-clidepsedn"></a></p>
 <h3 id="clojure-clidepsedn">Clojure CLI/deps.edn</h3>
 <p>Add the following dependency to your <code>deps.edn</code>:</p>
-<pre><code class="language-clojure">com.adaiasmagdiel/deta {:mvn/version &quot;0.0.3&quot;}
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nv">com.adaiasmagdiel/deta</span><span class="w"> </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">&quot;0.0.3&quot;</span><span class="p">}</span>
+</code></pre></div>
 <p><a name="gradle"></a></p>
 <h3 id="gradle">Gradle</h3>
 <p>Add the following dependency to your <code>build.gradle</code>:</p>
-<pre><code class="language-gradle">implementation(&quot;com.adaiasmagdiel:deta:0.0.3&quot;)
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>implementation(&quot;com.adaiasmagdiel:deta:0.0.3&quot;)
+</code></pre></div>
 <p><a name="maven"></a></p>
 <h3 id="maven">Maven</h3>
 <p>Add the following dependency to your <code>pom.xml</code>:</p>
-<pre><code class="language-xml">&lt;dependency&gt;
- &lt;groupId&gt;com.adaiasmagdiel&lt;/groupId&gt;
- &lt;artifactId&gt;deta&lt;/artifactId&gt;
- &lt;version&gt;0.0.3&lt;/version&gt;
-&lt;/dependency&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">&lt;dependency&gt;</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w"> </span><span class="nt">&lt;groupId&gt;</span>com.adaiasmagdiel<span class="nt">&lt;/groupId&gt;</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w"> </span><span class="nt">&lt;artifactId&gt;</span>deta<span class="nt">&lt;/artifactId&gt;</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w"> </span><span class="nt">&lt;version&gt;</span>0.0.3<span class="nt">&lt;/version&gt;</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="nt">&lt;/dependency&gt;</span>
+</code></pre></div>
 <p><a name="tests"></a></p>
 <h2 id="tests">Tests</h2>
 <p>The <code>deta.base-test</code> namespace includes tests for the <code>base</code> and <code>put</code> functions. These tests cover various scenarios, including valid and invalid <code>deta-key</code> inputs, different data types for the <code>put</code> function, and the behavior of the <code>put</code> function when a key is provided.</p>
@@ -624,14 +624,14 @@
 <p>To run the tests, set the <code>DETA_KEY</code> environment variable to a valid Deta key beforehand.</p>
 <p><a name="windows"></a></p>
 <h3 id="windows">Windows</h3>
-<pre><code class="language-cmd">set DETA_KEY=your_deta_key_here
-lein test
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>set DETA_KEY=your_deta_key_here
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>lein test
+</code></pre></div>
 <p><a name="linuxmacos"></a></p>
 <h3 id="linuxmacos">Linux/MacOS</h3>
-<pre><code class="language-bash">export DETA_KEY=your_deta_key_here
-lein test
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">DETA_KEY</span><span class="o">=</span>your_deta_key_here
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>lein<span class="w"> </span><span class="nb">test</span>
+</code></pre></div>
 <p>Replace <code>your_deta_key_here</code> with your actual Deta key.</p>
 
 
@@ -679,7 +679,7 @@ lein test
     </div>
     
     
-    <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.sections", "navigation.path", "content.code.copy"], "search": "assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="assets/javascripts/bundle.c8d2eff1.min.js"></script>

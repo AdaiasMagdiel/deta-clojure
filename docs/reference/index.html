@@ -444,42 +444,42 @@
 </ul>
 <p><a name="base"></a></p>
 <h2 id="base">Base</h2>
-<pre><code class="language-clojure">(base/base deta-key basename)
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">(</span><span class="nf">base/base</span><span class="w"> </span><span class="nv">deta-key</span><span class="w"> </span><span class="nv">basename</span><span class="p">)</span>
+</code></pre></div>
 <ul>
 <li><strong>Return:</strong> Database connection object.</li>
 <li><strong>Exceptions:</strong> If <code>deta-key</code> is invalid or not provided.</li>
 </ul>
 <p><a name="put"></a></p>
 <h2 id="put">Put</h2>
-<pre><code class="language-clojure">(base/put db data)
-(base/put db data key)
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">(</span><span class="nf">base/put</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="nv">data</span><span class="p">)</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="p">(</span><span class="nf">base/put</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="nv">data</span><span class="w"> </span><span class="nv">key</span><span class="p">)</span>
+</code></pre></div>
 <ul>
 <li><strong>Return:</strong> Map containing the inserted data and the generated key (if not provided).</li>
 <li><strong>Exceptions:</strong> If data type is not supported, or if <code>deta-key</code> is invalid or not provided.</li>
 </ul>
 <p><a name="get"></a></p>
 <h2 id="get">Get</h2>
-<pre><code class="language-clojure">(base/get db key)
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">(</span><span class="nf">base/get</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="nv">key</span><span class="p">)</span>
+</code></pre></div>
 <ul>
 <li><strong>Return:</strong> Retrieved data as a map if the key exists, or <code>nil</code> if the key does not exist or an error occurs.</li>
 <li><strong>Exceptions:</strong> If <code>key</code> is not provided or is empty.</li>
 </ul>
 <p><a name="delete"></a></p>
 <h2 id="delete">Delete</h2>
-<pre><code class="language-clojure">(base/delete db key)
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">(</span><span class="nf">base/delete</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="nv">key</span><span class="p">)</span>
+</code></pre></div>
 <ul>
 <li><strong>Return:</strong> <code>nil</code>. The function does not return a meaningful value as its purpose is to remove an item from the database.</li>
 <li><strong>Exceptions:</strong> Throws an <code>Exception</code> if the key is not provided or is empty.</li>
 </ul>
 <p><a name="insert"></a></p>
 <h2 id="insert">Insert</h2>
-<pre><code class="language-clojure">(base/insert db data)
-(base/insert db data key)
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">(</span><span class="nf">base/insert</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="nv">data</span><span class="p">)</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="p">(</span><span class="nf">base/insert</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="nv">data</span><span class="w"> </span><span class="nv">key</span><span class="p">)</span>
+</code></pre></div>
 <ul>
 <li><strong>Return:</strong> Map containing the inserted data and the generated key (if not provided).</li>
 <li><strong>Exceptions:</strong> Throws an <code>Exception</code> if the data type is not supported, or if <code>deta-key</code> is invalid or not provided, or if an item with the provided key already exists.</li>
@@ -530,7 +530,7 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections", "navigation.path", "content.code.copy"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../assets/javascripts/bundle.c8d2eff1.min.js"></script>

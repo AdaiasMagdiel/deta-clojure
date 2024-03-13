@@ -887,22 +887,22 @@
 <p><a name="getting-started"></a></p>
 <h2 id="getting-started">Getting Started</h2>
 <p>To use the <code>deta.base</code> namespace, include it in your project dependencies and require it in your code. The namespace utilizes <code>clojure.string</code>, <code>clojure.data.json</code>, and <code>clj-http.client</code> for its operations.</p>
-<pre><code class="language-clojure">(ns your-namespace
- (:require [deta.base :as base]))
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">your-namespace</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w"> </span><span class="p">(</span><span class="ss">:require</span><span class="w"> </span><span class="p">[</span><span class="nv">deta.base</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">base</span><span class="p">]))</span>
+</code></pre></div>
 <p><a name="exemplified-usage"></a></p>
 <h2 id="exemplified-usage">Exemplified Usage</h2>
 <p><a name="database-connection-initialization"></a></p>
 <h3 id="database-connection-initialization">Database Connection Initialization</h3>
-<pre><code class="language-clojure">(def db (base/base &quot;a0abcyxzxsr_aSecretValue&quot; &quot;items&quot;))
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">(</span><span class="k">def </span><span class="nv">db</span><span class="w"> </span><span class="p">(</span><span class="nf">base/base</span><span class="w"> </span><span class="s">&quot;a0abcyxzxsr_aSecretValue&quot;</span><span class="w"> </span><span class="s">&quot;items&quot;</span><span class="p">))</span>
+</code></pre></div>
 <p><a name="using-the-put-function"></a></p>
 <h3 id="using-the-put-function">Using the <code>put</code> Function</h3>
 <p><a name="basic-usage"></a></p>
 <h4 id="basic-usage">Basic Usage</h4>
-<pre><code class="language-clojure">(base/put db {:a 1 :b 2} &quot;item-key&quot;)
-(base/put db {:a 1 :b 2}) ; The key is automatically generated on the server
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">(</span><span class="nf">base/put</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="p">{</span><span class="ss">:a</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="ss">:b</span><span class="w"> </span><span class="mi">2</span><span class="p">}</span><span class="w"> </span><span class="s">&quot;item-key&quot;</span><span class="p">)</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="p">(</span><span class="nf">base/put</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="p">{</span><span class="ss">:a</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="ss">:b</span><span class="w"> </span><span class="mi">2</span><span class="p">})</span><span class="w"> </span><span class="c1">; The key is automatically generated on the server</span>
+</code></pre></div>
 <p><a name="handling-non-map-values"></a></p>
 <h4 id="handling-non-map-values">Handling Non-Map Values</h4>
 <p>If the data passed to the <code>put</code> function is not a map, it is automatically encapsulated in a map with the key <code>"value"</code>. This allows for flexibility in the types of data that can be stored in the database.</p>
@@ -912,14 +912,14 @@
 <p>The <code>put</code> function throws an <code>Exception</code> if the data type is not supported, or if the <code>deta-key</code> is invalid or not provided.</p>
 <p><a name="example-with-non-map-value"></a></p>
 <h4 id="example-with-non-map-value">Example with Non-Map Value</h4>
-<pre><code class="language-clojure">(base/put db &quot;Hello, World!&quot;) ; Automatically encapsulated in {&quot;value&quot; &quot;Hello, World!&quot;}
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">(</span><span class="nf">base/put</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="s">&quot;Hello, World!&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">; Automatically encapsulated in {&quot;value&quot; &quot;Hello, World!&quot;}</span>
+</code></pre></div>
 <p><a name="using-the-get-function"></a></p>
 <h3 id="using-the-get-function">Using the <code>get</code> Function</h3>
 <p><a name="basic-usage-1"></a></p>
 <h4 id="basic-usage_1">Basic Usage</h4>
-<pre><code class="language-clojure">(base/get db &quot;item-key&quot;)
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">(</span><span class="nf">base/get</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="s">&quot;item-key&quot;</span><span class="p">)</span>
+</code></pre></div>
 <p><a name="return-value-and-exceptions-1"></a></p>
 <h4 id="return-value-and-exceptions_1">Return Value and Exceptions</h4>
 <p>The <code>get</code> function returns a map containing the retrieved data if the key exists, or <code>nil</code> if the key does not exist or an error occurs.</p>
@@ -928,23 +928,23 @@
 <h3 id="using-the-delete-function">Using the <code>delete</code> Function</h3>
 <p><a name="basic-usage-2"></a></p>
 <h4 id="basic-usage_2">Basic Usage</h4>
-<pre><code class="language-clojure">(base/delete db &quot;item-key&quot;)
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">(</span><span class="nf">base/delete</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="s">&quot;item-key&quot;</span><span class="p">)</span>
+</code></pre></div>
 <p><a name="return-value-and-exceptions-2"></a></p>
 <h4 id="return-value-and-exceptions_2">Return Value and Exceptions</h4>
 <p>The <code>delete</code> function does not return a meaningful value, as its purpose is to remove an item from the database. If the provided key is <code>nil</code> or empty, the function will throw an exception. Otherwise, it attempts to delete the item corresponding to the provided key.</p>
 <p>The <code>delete</code> function throws an <code>Exception</code> if the project key is not provided or is invalid.</p>
 <p><a name="example-of-usage"></a></p>
 <h4 id="example-of-usage">Example of Usage</h4>
-<pre><code class="language-clojure">(base/delete db &quot;user-123&quot;) ; Attempts to delete the item with the key &quot;user-123&quot;
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">(</span><span class="nf">base/delete</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="s">&quot;user-123&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">; Attempts to delete the item with the key &quot;user-123&quot;</span>
+</code></pre></div>
 <p><a name="using-the-insert-function"></a></p>
 <h3 id="using-the-insert-function">Using the <code>insert</code> Function</h3>
 <p><a name="basic-usage-3"></a></p>
 <h4 id="basic-usage_3">Basic Usage</h4>
-<pre><code class="language-clojure">(base/insert db {:a 1 :b 2} &quot;item-key&quot;)
-(base/insert db {:a 1 :b 2}) ; The key is automatically generated on the server
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">(</span><span class="nf">base/insert</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="p">{</span><span class="ss">:a</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="ss">:b</span><span class="w"> </span><span class="mi">2</span><span class="p">}</span><span class="w"> </span><span class="s">&quot;item-key&quot;</span><span class="p">)</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="p">(</span><span class="nf">base/insert</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="p">{</span><span class="ss">:a</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="ss">:b</span><span class="w"> </span><span class="mi">2</span><span class="p">})</span><span class="w"> </span><span class="c1">; The key is automatically generated on the server</span>
+</code></pre></div>
 <p><a name="handling-non-map-values-1"></a></p>
 <h4 id="handling-non-map-values_1">Handling Non-Map Values</h4>
 <p>If the data passed to the <code>insert</code> function is not a map, it is automatically encapsulated in a map with the key <code>"value"</code>. This allows for flexibility in the types of data that can be stored in the database.</p>
@@ -954,38 +954,38 @@
 <p>The <code>insert</code> function throws an <code>Exception</code> if an item with the provided key already exists (status code 409), or if the data type is not supported, or if the <code>deta-key</code> is invalid or not provided.</p>
 <p><a name="example-with-non-map-value-1"></a></p>
 <h4 id="example-with-non-map-value_1">Example with Non-Map Value</h4>
-<pre><code class="language-clojure">(base/insert db &quot;Hello, World!&quot;) ; Automatically encapsulated in {&quot;value&quot; &quot;Hello, World!&quot;}
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">(</span><span class="nf">base/insert</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="s">&quot;Hello, World!&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">; Automatically encapsulated in {&quot;value&quot; &quot;Hello, World!&quot;}</span>
+</code></pre></div>
 <p><a name="use-cases"></a></p>
 <h3 id="use-cases">Use Cases</h3>
 <p><a name="data-insertion"></a></p>
 <h4 id="data-insertion">Data Insertion</h4>
 <p>The <code>put</code> function's ability to accept any type of data makes it versatile for various use cases. Here are examples of inserting various types of data:</p>
-<pre><code class="language-clojure">(base/put db {:name &quot;John Doe&quot; :age 30}) ; Inserting a map
-(base/put db &quot;Hello, World!&quot;) ; Inserting a string
-(base/put db 42) ; Inserting an integer
-(base/put db 3.14) ; Inserting a float
-(base/put db true) ; Inserting a boolean
-(base/put db nil) ; Inserting nil
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="p">(</span><span class="nf">base/put</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="p">{</span><span class="ss">:name</span><span class="w"> </span><span class="s">&quot;John Doe&quot;</span><span class="w"> </span><span class="ss">:age</span><span class="w"> </span><span class="mi">30</span><span class="p">})</span><span class="w"> </span><span class="c1">; Inserting a map</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="p">(</span><span class="nf">base/put</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="s">&quot;Hello, World!&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">; Inserting a string</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="p">(</span><span class="nf">base/put</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="mi">42</span><span class="p">)</span><span class="w"> </span><span class="c1">; Inserting an integer</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="p">(</span><span class="nf">base/put</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="mf">3.14</span><span class="p">)</span><span class="w"> </span><span class="c1">; Inserting a float</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="p">(</span><span class="nf">base/put</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="nv">true</span><span class="p">)</span><span class="w"> </span><span class="c1">; Inserting a boolean</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="p">(</span><span class="nf">base/put</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="nv">nil</span><span class="p">)</span><span class="w"> </span><span class="c1">; Inserting nil</span>
+</code></pre></div>
 <p>You can also use the <code>base/insert</code> command to insert data. The difference between <code>base/put</code> and <code>base/insert</code> is that <code>base/put</code> will insert data and update if the key already exists, while <code>base/insert</code> will throw an exception if the key already exists.</p>
-<pre><code class="language-clojure">(base/insert db {:name &quot;John Doe&quot; :age 30}) ; Inserting a map
-(base/insert db &quot;Hello, World!&quot;) ; Inserting a string
-(base/insert db 42) ; Inserting an integer
-(base/insert db 3.14) ; Inserting a float
-(base/insert db true) ; Inserting a boolean
-(base/insert db nil) ; Inserting nil
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="p">(</span><span class="nf">base/insert</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="p">{</span><span class="ss">:name</span><span class="w"> </span><span class="s">&quot;John Doe&quot;</span><span class="w"> </span><span class="ss">:age</span><span class="w"> </span><span class="mi">30</span><span class="p">})</span><span class="w"> </span><span class="c1">; Inserting a map</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="p">(</span><span class="nf">base/insert</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="s">&quot;Hello, World!&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">; Inserting a string</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="p">(</span><span class="nf">base/insert</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="mi">42</span><span class="p">)</span><span class="w"> </span><span class="c1">; Inserting an integer</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="p">(</span><span class="nf">base/insert</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="mf">3.14</span><span class="p">)</span><span class="w"> </span><span class="c1">; Inserting a float</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="p">(</span><span class="nf">base/insert</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="nv">true</span><span class="p">)</span><span class="w"> </span><span class="c1">; Inserting a boolean</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="p">(</span><span class="nf">base/insert</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="nv">nil</span><span class="p">)</span><span class="w"> </span><span class="c1">; Inserting nil</span>
+</code></pre></div>
 <p><a name="data-retrieval"></a></p>
 <h4 id="data-retrieval">Data Retrieval</h4>
 <p>To retrieve data from the database, you can use the <code>get</code> function. Here's an example of how to retrieve an item by its key:</p>
-<pre><code class="language-clojure">(base/get db &quot;user-123&quot;)
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="p">(</span><span class="nf">base/get</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="s">&quot;user-123&quot;</span><span class="p">)</span>
+</code></pre></div>
 <p><a name="data-removal"></a></p>
 <h4 id="data-removal">Data Removal</h4>
 <p>The <code>delete</code> function is useful for removing specific items from the database. Here's an example of how you can use this function to remove an item:</p>
-<pre><code class="language-clojure">(base/delete db &quot;item-key&quot;) ; Removes the item with the key &quot;item-key&quot;
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="p">(</span><span class="nf">base/delete</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="s">&quot;item-key&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">; Removes the item with the key &quot;item-key&quot;</span>
+</code></pre></div>
 
 
 
@@ -1032,7 +1032,7 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections", "navigation.path", "content.code.copy"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../assets/javascripts/bundle.c8d2eff1.min.js"></script>
