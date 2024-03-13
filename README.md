@@ -27,9 +27,12 @@ Deta is a Clojure library designed to simplify interactions with the Deta databa
 
 ## Features
 
--   **Base Initialization**: Easily initialize a database connection with a simple function call.
--   **Data Insertion**: Insert data into the Deta database with support for various data types.
--   **Testing**: Comprehensive test suite to ensure reliability and correctness.
+-   **Database Initialization**: Easily establish a connection to a Deta database with a straightforward function call.
+-   **Data Insertion**: Insert data into the Deta database, supporting various data types.
+-   **Data Update**: Update existing data in the Deta database or insert new data if the key does not exist.
+-   **Data Retrieval**: Fetch data from the Deta database by specifying a key.
+-   **Data Deletion**: Remove data from the Deta database by specifying a key.
+-   **Testing**: A comprehensive test suite is essential to ensure reliability and accuracy.
 
 ## Documentation
 
