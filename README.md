@@ -2,8 +2,28 @@
 
 [![Clojars Project](https://img.shields.io/clojars/v/com.adaiasmagdiel/deta.svg)](https://clojars.org/com.adaiasmagdiel/deta)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Documentation](https://img.shields.io/badge/MKDocs-Documentation-green.svg)](https://adaiasmagdiel.github.io/deta-clojure/)
 
 Deta is a Clojure library designed to simplify interactions with the Deta database. It provides a straightforward way to initialize a database connection and perform basic operations such as inserting data. This library is ideal for developers looking to integrate Deta database functionality into their Clojure applications.
+
+## Table of Contents
+
+-   [Features](#features)
+-   [Documentation](#documentation)
+-   [Getting Started](#getting-started)
+    -   [Prerequisites](#prerequisites)
+    -   [Installation](#installation)
+    -   [Usage](#usage)
+        -   [Initializing a Deta Base Connection](#initializing-a-deta-base-connection)
+        -   [Inserting Data](#inserting-data)
+        -   [Retrieving Data](#retrieving-data)
+        -   [Deleting Dataa](#deleting-data)
+-   [Testing](#testing)
+    -   [Windows](#windows)
+    -   [Linux/MacOS](#linuxmacos)
+-   [Contributing](#contributing)
+-   [License](#license)
+-   [Contact](#contact)
 
 ## Features
 
@@ -13,9 +33,7 @@ Deta is a Clojure library designed to simplify interactions with the Deta databa
 
 ## Documentation
 
--   [Introduction](doc/intro.md)
--   [Usage](doc/usage.md)
--   [Reference](doc/reference.md)
+To fully understand how to use this software, referring to the comprehensive documentation available at [https://adaiasmagdiel.github.io/deta-clojure/](https://adaiasmagdiel.github.io/deta-clojure/).
 
 ## Getting Started
 
@@ -32,7 +50,7 @@ This library is now available as a dependency. You can add it to your project us
 [com.adaiasmagdiel/deta "0.0.3"]
 ```
 
-For more installation methods, such as `Clojure CLI/deps.edn`, `Gradle`, and `Maven`, please refer to the [Installation](doc/usage.md#installation) section of our documentation.
+For more installation methods, such as `Clojure CLI/deps.edn`, `Gradle`, and `Maven`, please refer to the [installation](https://adaiasmagdiel.github.io/deta-clojure/#installation) section of our documentation.
 
 ### Usage
 
@@ -54,7 +72,7 @@ For more installation methods, such as `Clojure CLI/deps.edn`, `Gradle`, and `Ma
 (base/insert db {:c 3 :d 4}) ; The key is automatically generated on the server
 ```
 
-Please refer to the [documentation](doc/intro.md) to understand the distinction between "put" and "insert".
+Please refer to the [documentation](https://adaiasmagdiel.github.io/deta-clojure/usage/#data-insertion) to understand the distinction between "put" and "insert".
 
 #### Retrieving Data
 
@@ -68,7 +86,7 @@ Please refer to the [documentation](doc/intro.md) to understand the distinction 
 (base/delete db "item-key")
 ```
 
-For more detailed usage instructions and examples, please refer to the [Usage](doc/usage.md#getting-started) section of our documentation.
+For more detailed usage instructions and examples, please refer to the [usage](https://adaiasmagdiel.github.io/deta-clojure/usage/#getting-started) section of our documentation.
 
 ## Testing
 
