@@ -1,0 +1,1042 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../reference/">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.13">
+    
+    
+      
+        <title>Usage - Deta Clojure API</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.7e359304.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#usage" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Deta Clojure API" class="md-header__button md-logo" aria-label="Deta Clojure API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Deta Clojure API
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Usage
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Deta Clojure API" class="md-nav__button md-logo" aria-label="Deta Clojure API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Deta Clojure API
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Deta Clojure API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reference
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Usage
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Usage
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Table of Contents
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    <span class="md-ellipsis">
+      Getting Started
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exemplified-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplified Usage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exemplified Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#database-connection-initialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Database Connection Initialization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-the-put-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using the put Function
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Using the put Function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Usage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#handling-non-map-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      Handling Non-Map Values
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return-value-and-exceptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Return Value and Exceptions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-with-non-map-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example with Non-Map Value
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-the-get-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using the get Function
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Using the get Function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-usage_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Usage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return-value-and-exceptions_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Return Value and Exceptions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-the-delete-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using the delete Function
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Using the delete Function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-usage_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Usage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return-value-and-exceptions_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Return Value and Exceptions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-of-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example of Usage
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-the-insert-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using the insert Function
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Using the insert Function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-usage_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Usage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#handling-non-map-values_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Handling Non-Map Values
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return-value-and-exceptions_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Return Value and Exceptions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-with-non-map-value_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example with Non-Map Value
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use Cases
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Use Cases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-insertion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Insertion
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-retrieval" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Retrieval
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-removal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Removal
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Table of Contents
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    <span class="md-ellipsis">
+      Getting Started
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exemplified-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplified Usage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exemplified Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#database-connection-initialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Database Connection Initialization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-the-put-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using the put Function
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Using the put Function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Usage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#handling-non-map-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      Handling Non-Map Values
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return-value-and-exceptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Return Value and Exceptions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-with-non-map-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example with Non-Map Value
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-the-get-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using the get Function
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Using the get Function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-usage_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Usage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return-value-and-exceptions_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Return Value and Exceptions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-the-delete-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using the delete Function
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Using the delete Function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-usage_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Usage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return-value-and-exceptions_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Return Value and Exceptions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-of-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example of Usage
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-the-insert-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using the insert Function
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Using the insert Function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-usage_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Usage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#handling-non-map-values_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Handling Non-Map Values
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return-value-and-exceptions_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Return Value and Exceptions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-with-non-map-value_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example with Non-Map Value
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use Cases
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Use Cases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-insertion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Insertion
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-retrieval" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Retrieval
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-removal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Removal
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="usage">Usage</h1>
+<p>This section offers an overview of the <code>deta</code> library, designed to interact with Deta Base, a NoSQL database service. The library is presented as a tool for integration with Clojure projects, highlighting its benefits.</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#getting-started">Getting Started</a></li>
+<li><a href="#exemplified-usage">Exemplified Usage</a></li>
+<li><a href="#database-connection-initialization">Database Connection Initialization</a></li>
+<li><a href="#using-the-put-function">Using the <code>put</code> Function</a><ul>
+<li><a href="#basic-usage">Basic Usage</a></li>
+<li><a href="#handling-non-map-values">Handling Non-Map Values</a></li>
+<li><a href="#return-value-and-exceptions">Return Value and Exceptions</a></li>
+<li><a href="#example-with-non-map-value">Example with Non-Map Value</a></li>
+</ul>
+</li>
+<li><a href="#using-the-get-function">Using the <code>get</code> Function</a><ul>
+<li><a href="#basic-usage-1">Basic Usage</a></li>
+<li><a href="#return-value-and-exceptions-1">Return Value and Exceptions</a></li>
+</ul>
+</li>
+<li><a href="#using-the-delete-function">Using the <code>delete</code> Function</a><ul>
+<li><a href="#basic-usage-2">Basic Usage</a></li>
+<li><a href="#return-value-and-exceptions-2">Return Value and Exceptions</a></li>
+<li><a href="#example-of-usage">Example of Usage</a></li>
+</ul>
+</li>
+<li><a href="#using-the-insert-function">Using the <code>insert</code> Function</a><ul>
+<li><a href="#basic-usage-3">Basic Usage</a></li>
+<li><a href="#handling-non-map-values-1">Handling Non-Map Values</a></li>
+<li><a href="#return-value-and-exceptions-3">Return Value and Exceptions</a></li>
+<li><a href="#example-with-non-map-value-1">Example with Non-Map Value</a></li>
+</ul>
+</li>
+<li><a href="#use-cases">Use Cases</a><ul>
+<li><a href="#data-insertion">Data Insertion</a></li>
+<li><a href="#data-retrieval">Data Retrieval</a></li>
+<li><a href="#data-removal">Data Removal</a></li>
+</ul>
+</li>
+</ul>
+<p><a name="getting-started"></a></p>
+<h2 id="getting-started">Getting Started</h2>
+<p>To use the <code>deta.base</code> namespace, include it in your project dependencies and require it in your code. The namespace utilizes <code>clojure.string</code>, <code>clojure.data.json</code>, and <code>clj-http.client</code> for its operations.</p>
+<pre><code class="language-clojure">(ns your-namespace
+ (:require [deta.base :as base]))
+</code></pre>
+<p><a name="exemplified-usage"></a></p>
+<h2 id="exemplified-usage">Exemplified Usage</h2>
+<p><a name="database-connection-initialization"></a></p>
+<h3 id="database-connection-initialization">Database Connection Initialization</h3>
+<pre><code class="language-clojure">(def db (base/base &quot;a0abcyxzxsr_aSecretValue&quot; &quot;items&quot;))
+</code></pre>
+<p><a name="using-the-put-function"></a></p>
+<h3 id="using-the-put-function">Using the <code>put</code> Function</h3>
+<p><a name="basic-usage"></a></p>
+<h4 id="basic-usage">Basic Usage</h4>
+<pre><code class="language-clojure">(base/put db {:a 1 :b 2} &quot;item-key&quot;)
+(base/put db {:a 1 :b 2}) ; The key is automatically generated on the server
+</code></pre>
+<p><a name="handling-non-map-values"></a></p>
+<h4 id="handling-non-map-values">Handling Non-Map Values</h4>
+<p>If the data passed to the <code>put</code> function is not a map, it is automatically encapsulated in a map with the key <code>"value"</code>. This allows for flexibility in the types of data that can be stored in the database.</p>
+<p><a name="return-value-and-exceptions"></a></p>
+<h4 id="return-value-and-exceptions">Return Value and Exceptions</h4>
+<p>The <code>put</code> function returns a map containing the inserted data. If a key is not provided, the server automatically generates one. The returned map includes the data and the generated key.</p>
+<p>The <code>put</code> function throws an <code>Exception</code> if the data type is not supported, or if the <code>deta-key</code> is invalid or not provided.</p>
+<p><a name="example-with-non-map-value"></a></p>
+<h4 id="example-with-non-map-value">Example with Non-Map Value</h4>
+<pre><code class="language-clojure">(base/put db &quot;Hello, World!&quot;) ; Automatically encapsulated in {&quot;value&quot; &quot;Hello, World!&quot;}
+</code></pre>
+<p><a name="using-the-get-function"></a></p>
+<h3 id="using-the-get-function">Using the <code>get</code> Function</h3>
+<p><a name="basic-usage-1"></a></p>
+<h4 id="basic-usage_1">Basic Usage</h4>
+<pre><code class="language-clojure">(base/get db &quot;item-key&quot;)
+</code></pre>
+<p><a name="return-value-and-exceptions-1"></a></p>
+<h4 id="return-value-and-exceptions_1">Return Value and Exceptions</h4>
+<p>The <code>get</code> function returns a map containing the retrieved data if the key exists, or <code>nil</code> if the key does not exist or an error occurs.</p>
+<p>The <code>get</code> function throws an <code>Exception</code> if the <code>deta-key</code> is invalid or not provided, or if the key is empty or not provided.</p>
+<p><a name="using-the-delete-function"></a></p>
+<h3 id="using-the-delete-function">Using the <code>delete</code> Function</h3>
+<p><a name="basic-usage-2"></a></p>
+<h4 id="basic-usage_2">Basic Usage</h4>
+<pre><code class="language-clojure">(base/delete db &quot;item-key&quot;)
+</code></pre>
+<p><a name="return-value-and-exceptions-2"></a></p>
+<h4 id="return-value-and-exceptions_2">Return Value and Exceptions</h4>
+<p>The <code>delete</code> function does not return a meaningful value, as its purpose is to remove an item from the database. If the provided key is <code>nil</code> or empty, the function will throw an exception. Otherwise, it attempts to delete the item corresponding to the provided key.</p>
+<p>The <code>delete</code> function throws an <code>Exception</code> if the project key is not provided or is invalid.</p>
+<p><a name="example-of-usage"></a></p>
+<h4 id="example-of-usage">Example of Usage</h4>
+<pre><code class="language-clojure">(base/delete db &quot;user-123&quot;) ; Attempts to delete the item with the key &quot;user-123&quot;
+</code></pre>
+<p><a name="using-the-insert-function"></a></p>
+<h3 id="using-the-insert-function">Using the <code>insert</code> Function</h3>
+<p><a name="basic-usage-3"></a></p>
+<h4 id="basic-usage_3">Basic Usage</h4>
+<pre><code class="language-clojure">(base/insert db {:a 1 :b 2} &quot;item-key&quot;)
+(base/insert db {:a 1 :b 2}) ; The key is automatically generated on the server
+</code></pre>
+<p><a name="handling-non-map-values-1"></a></p>
+<h4 id="handling-non-map-values_1">Handling Non-Map Values</h4>
+<p>If the data passed to the <code>insert</code> function is not a map, it is automatically encapsulated in a map with the key <code>"value"</code>. This allows for flexibility in the types of data that can be stored in the database.</p>
+<p><a name="return-value-and-exceptions-3"></a></p>
+<h4 id="return-value-and-exceptions_3">Return Value and Exceptions</h4>
+<p>The <code>insert</code> function returns a map containing the inserted data. If a key is not provided, the server automatically generates one. The returned map includes the data and the generated key.</p>
+<p>The <code>insert</code> function throws an <code>Exception</code> if an item with the provided key already exists (status code 409), or if the data type is not supported, or if the <code>deta-key</code> is invalid or not provided.</p>
+<p><a name="example-with-non-map-value-1"></a></p>
+<h4 id="example-with-non-map-value_1">Example with Non-Map Value</h4>
+<pre><code class="language-clojure">(base/insert db &quot;Hello, World!&quot;) ; Automatically encapsulated in {&quot;value&quot; &quot;Hello, World!&quot;}
+</code></pre>
+<p><a name="use-cases"></a></p>
+<h3 id="use-cases">Use Cases</h3>
+<p><a name="data-insertion"></a></p>
+<h4 id="data-insertion">Data Insertion</h4>
+<p>The <code>put</code> function's ability to accept any type of data makes it versatile for various use cases. Here are examples of inserting various types of data:</p>
+<pre><code class="language-clojure">(base/put db {:name &quot;John Doe&quot; :age 30}) ; Inserting a map
+(base/put db &quot;Hello, World!&quot;) ; Inserting a string
+(base/put db 42) ; Inserting an integer
+(base/put db 3.14) ; Inserting a float
+(base/put db true) ; Inserting a boolean
+(base/put db nil) ; Inserting nil
+</code></pre>
+<p>You can also use the <code>base/insert</code> command to insert data. The difference between <code>base/put</code> and <code>base/insert</code> is that <code>base/put</code> will insert data and update if the key already exists, while <code>base/insert</code> will throw an exception if the key already exists.</p>
+<pre><code class="language-clojure">(base/insert db {:name &quot;John Doe&quot; :age 30}) ; Inserting a map
+(base/insert db &quot;Hello, World!&quot;) ; Inserting a string
+(base/insert db 42) ; Inserting an integer
+(base/insert db 3.14) ; Inserting a float
+(base/insert db true) ; Inserting a boolean
+(base/insert db nil) ; Inserting nil
+</code></pre>
+<p><a name="data-retrieval"></a></p>
+<h4 id="data-retrieval">Data Retrieval</h4>
+<p>To retrieve data from the database, you can use the <code>get</code> function. Here's an example of how to retrieve an item by its key:</p>
+<pre><code class="language-clojure">(base/get db &quot;user-123&quot;)
+</code></pre>
+<p><a name="data-removal"></a></p>
+<h4 id="data-removal">Data Removal</h4>
+<p>The <code>delete</code> function is useful for removing specific items from the database. Here's an example of how you can use this function to remove an item:</p>
+<pre><code class="language-clojure">(base/delete db &quot;item-key&quot;) ; Removes the item with the key &quot;item-key&quot;
+</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c8d2eff1.min.js"></script>
+      
+    
+  </body>
+</html>
