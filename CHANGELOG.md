@@ -65,3 +65,26 @@
 -   Removed the old `base/put` function documentation from `doc/reference.md`.
 
 [0.0.3]: https://github.com/AdaiasMagdiel/deta-clojure/compare/v0.0.2...v0.0.3
+
+## [0.0.4] - 2024-03-13
+
+### Added
+
+-   Added a new function `fetch` to the `base.clj` file, allowing for custom queries to the Deta database with support for pagination, sorting, and limiting results.
+-   Added tests for the `fetch` function in the `base_test.clj` file, covering various scenarios such as valid and non-matching queries, handling multiple queries, and pagination.
+-   Added a new section to the README.md file for documentation, including a link to the project's documentation hosted on GitHub Pages.
+-   Added a new section to the README.md file for a table of contents, improving the navigation of the documentation.
+-   Added detailed descriptions and examples to the README.md file for better understanding of the library's features and usage.
+
+### Changed
+
+-   Updated the project version in `project.clj` from `0.0.3` to `0.0.4`.
+-   Updated the dependency version in `project.clj` from `0.0.1` to `0.0.3`.
+-   Updated the README.md file with new sections and links for better documentation and usage instructions.
+-   Updated the `fetch` function in `base.clj` to handle more complex queries and parameters, enhancing the library's functionality.
+
+### Removed
+
+-   Removed the `doc/intro.md`, `doc/reference.md`, and `doc/usage.md` files, as they have been consolidated into the docs branch for improved documentation structure.
+
+[0.0.4]: https://github.com/AdaiasMagdiel/deta-clojure/compare/v0.0.3...v0.0.4
