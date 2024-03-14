@@ -35,7 +35,8 @@
            first)
          nil)))))
 
-(defn get [db key]
+; TODO: Is late and all i want is a good rest. Tomorrow i fix the docs.
+(defn pick [db key]
   (when (or (nil? key) (empty? key))
     (throw (Exception. "No project key provided")))
 
@@ -55,7 +56,6 @@
   (client/delete (str (:base-url db) "/items/" key)
     {:headers {"X-API-Key" (:deta-key db)}
      :throw-exceptions false})
-
   nil)
 
 (defn insert
@@ -84,8 +84,9 @@
    (let [limit (:limit parameters 1000)
          last (:last parameters nil)
          sort (if (:desc parameters false) "desc" "asc")
-         queries (if (list? query) query [query])
+         queries (if (vector? query) query [query])
          payload {:query queries :limit limit :last last :sort sort}]
+     (println "[PAYLOAD]" payload)
      (let [response (client/post (str (:base-url db) "/query")
                       {:body (json/write-str payload)
                        :content-type :json
@@ -93,7 +94,9 @@
                        :throw-exceptions false})
            json-data (json/read-str (:body response))
            status (:status response)]
+       (println "[JSON]" json-data)
+       (println "[STATUS]" status)
        (cond
-         (= 400 status) {:count 0 :last nil :items []}
-         :else (let [paging (:paging json-data)]
-                 {:count (:size paging) :last (:last paging) :items (:items json-data)}))))))
+         (= 200 status) (let [paging (get "paging" json-data)] ; TODO: Tomorrow i fix these horror show
+                          {:count (get "size" paging) :last (get "last" paging) :items (get "items" json-data)})
+         :else {:count 0 :last nil :items []})))))
