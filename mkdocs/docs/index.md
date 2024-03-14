@@ -8,9 +8,12 @@ Deta is a Clojure library designed to simplify interactions with the Deta databa
 
 ## Features
 
--  **Base Initialization**: Easily initialize a database connection with a simple function call.
--  **Data Insertion**: Insert data into the Deta database with support for various data types.
--  **Testing**: Comprehensive test suite to ensure reliability and correctness.
+-  **Database Initialization**: Easily establish a connection to a Deta database with a straightforward function call.
+-  **Data Insertion**: Insert data into the Deta database, supporting various data types.
+-  **Data Update**: Update existing data in the Deta database or insert new data if the key does not exist.
+-  **Data Retrieval**: Fetch data from the Deta database by specifying a key.
+-  **Data Deletion**: Remove data from the Deta database by specifying a key.
+-  **Testing**: A comprehensive test suite is essential to ensure reliability and accuracy.
 
 ## Table of Contents
 
@@ -74,7 +77,7 @@ Deta is a Clojure library designed to simplify interactions with the Deta databa
 Add the following dependency to your `project.clj`:
 
 ```clojure
-[com.adaiasmagdiel/deta "0.0.4"]
+[com.adaiasmagdiel/deta "0.0.5"]
 ```
 
 <a name="clojure-clidepsedn"></a>
@@ -84,7 +87,7 @@ Add the following dependency to your `project.clj`:
 Add the following dependency to your `deps.edn`:
 
 ```clojure
-com.adaiasmagdiel/deta {:mvn/version "0.0.4"}
+com.adaiasmagdiel/deta {:mvn/version "0.0.5"}
 ```
 
 <a name="gradle"></a>
@@ -94,7 +97,7 @@ com.adaiasmagdiel/deta {:mvn/version "0.0.4"}
 Add the following dependency to your `build.gradle`:
 
 ```gradle
-implementation("com.adaiasmagdiel:deta:0.0.4")
+implementation("com.adaiasmagdiel:deta:0.0.5")
 ```
 
 <a name="maven"></a>
@@ -107,7 +110,7 @@ Add the following dependency to your `pom.xml`:
 <dependency>
  <groupId>com.adaiasmagdiel</groupId>
  <artifactId>deta</artifactId>
- <version>0.0.4</version>
+ <version>0.0.5</version>
 </dependency>
 ```
 
