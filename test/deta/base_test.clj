@@ -7,7 +7,8 @@
  	(let [key (System/getenv "DETA_KEY")]
   		(if (nil? key)
    			(do
-    				(System/exit 1))
+        (println "Please ensure you export the variable \"DETA_KEY\" with a valid Deta key.")
+     			(System/exit 1))
    			key)))
 
 (deftest base-test
