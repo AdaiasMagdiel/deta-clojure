@@ -489,6 +489,66 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#using-the-fetch-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using the fetch Function
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Using the fetch Function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-usage_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Usage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-of-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example of Use
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return-value-and-exceptions_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Return Value and Exceptions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-with-query-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example with Query Parameters
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#use-cases" class="md-nav__link">
     <span class="md-ellipsis">
       Use Cases
@@ -520,6 +580,15 @@
   <a href="#data-removal" class="md-nav__link">
     <span class="md-ellipsis">
       Data Removal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-fetching" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Fetching
     </span>
   </a>
   
@@ -784,6 +853,66 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#using-the-fetch-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using the fetch Function
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Using the fetch Function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-usage_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Usage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-of-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example of Use
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return-value-and-exceptions_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Return Value and Exceptions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-with-query-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example with Query Parameters
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#use-cases" class="md-nav__link">
     <span class="md-ellipsis">
       Use Cases
@@ -815,6 +944,15 @@
   <a href="#data-removal" class="md-nav__link">
     <span class="md-ellipsis">
       Data Removal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-fetching" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Fetching
     </span>
   </a>
   
@@ -877,10 +1015,19 @@
 <li><a href="#example-with-non-map-value-1">Example with Non-Map Value</a></li>
 </ul>
 </li>
+<li><a href="#using-the-fetch-function">Using the <code>fetch</code> Function</a><ul>
+<li><a href="#basic-usage-4">Basic Usage</a></li>
+<li><a href="#parameters">Parameters</a></li>
+<li><a href="#example-of-use">Example of Use</a></li>
+<li><a href="#return-value-and-exceptions-4">Return Value and Exceptions</a></li>
+<li><a href="#example-with-query-parameters">Example with Query Parameters</a></li>
+</ul>
+</li>
 <li><a href="#use-cases">Use Cases</a><ul>
 <li><a href="#data-insertion">Data Insertion</a></li>
 <li><a href="#data-retrieval">Data Retrieval</a></li>
 <li><a href="#data-removal">Data Removal</a></li>
+<li><a href="#data-fetching">Data Fetching</a></li>
 </ul>
 </li>
 </ul>
@@ -956,35 +1103,78 @@
 <h4 id="example-with-non-map-value_1">Example with Non-Map Value</h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">(</span><span class="nf">base/insert</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="s">&quot;Hello, World!&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">; Automatically encapsulated in {&quot;value&quot; &quot;Hello, World!&quot;}</span>
 </code></pre></div>
+<p><a name="using-the-fetch-function"></a></p>
+<h3 id="using-the-fetch-function">Using the <code>fetch</code> Function</h3>
+<p>The <code>fetch</code> function is a powerful tool for performing custom queries on the Deta Base. It supports pagination, sorting, and limiting results, making it ideal for efficiently retrieving large sets of data.</p>
+<p><a name="basic-usage-4"></a></p>
+<h4 id="basic-usage_4">Basic Usage</h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="p">(</span><span class="nf">base/fetch</span><span class="w"> </span><span class="nv">db</span><span class="p">)</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="p">(</span><span class="nf">base/fetch</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="nv">query</span><span class="p">)</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="p">(</span><span class="nf">base/fetch</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="nv">query</span><span class="w"> </span><span class="nv">parameters</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li><code>db</code>: The database connection object.</li>
+<li><code>query</code>: A list of queries or a single query as a string. If is empty returns all results from database. Read the <a href="https://deta.space/docs/en/build/reference/deta-base/queries">Deta Base documentation</a> to know more about queries.</li>
+<li><code>parameters</code>: A map of parameters that can include <code>:limit</code>, <code>:last</code> and <code>:desc</code>.</li>
+</ul>
+<p><a name="parameters"></a></p>
+<h4 id="parameters">Parameters</h4>
+<ul>
+<li><code>:limit</code>: The maximum number of items to be returned. The default is 1000.</li>
+<li><code>:last</code>: The key of the last item from the last query, used for pagination. The default is <code>nil</code>.</li>
+<li><code>:desc</code>: A boolean indicating whether the sorting should be descending. The default is <code>false</code>.</li>
+</ul>
+<p><a name="example-of-use"></a></p>
+<h4 id="example-of-use">Example of Use</h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="p">(</span><span class="nf">base/fetch</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="p">{</span><span class="ss">:name</span><span class="w"> </span><span class="s">&quot;John Doe&quot;</span><span class="p">})</span><span class="w"> </span><span class="c1">; Basic query</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="p">(</span><span class="nf">base/fetch</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="p">{</span><span class="ss">:age</span><span class="w"> </span><span class="mi">30</span><span class="p">}</span><span class="w"> </span><span class="p">{</span><span class="ss">:limit</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="ss">:last</span><span class="w"> </span><span class="s">&quot;key&quot;</span><span class="p">})</span><span class="w"> </span><span class="c1">; Query with limit and last</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="p">(</span><span class="nf">base/fetch</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="p">{</span><span class="ss">:age?r</span><span class="w"> </span><span class="p">[</span><span class="mi">22</span>,<span class="w"> </span><span class="mi">30</span><span class="p">]}</span><span class="w"> </span><span class="p">{</span><span class="ss">:limit</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="ss">:desc</span><span class="w"> </span><span class="nv">true</span><span class="p">})</span><span class="w"> </span><span class="c1">; Query with limit and sorting mode</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="p">(</span><span class="nf">base/fetch</span><span class="w"> </span><span class="nv">db</span><span class="p">)</span><span class="w"> </span><span class="c1">; Fetching all results from current Deta Base</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="p">(</span><span class="nf">base/fetch</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="p">{}</span><span class="w"> </span><span class="p">{</span><span class="ss">:limit</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="ss">:last</span><span class="w"> </span><span class="s">&quot;deta-is-awesome&quot;</span><span class="p">})</span><span class="w"> </span><span class="c1">; Fetching the first result starting from the key &quot;deta-is-awesome&quot;</span>
+</code></pre></div>
+<p>Read the <a href="https://deta.space/docs/en/build/reference/deta-base/queries">Deta Base documentation</a> to know more about queries.</p>
+<p><a name="return-value-and-exceptions-4"></a></p>
+<h4 id="return-value-and-exceptions_4">Return Value and Exceptions</h4>
+<p>The <code>fetch</code> function returns a map containing the number of items found (<code>:count</code>), the key of the last item (<code>:last</code>), and the list of found items (<code>:items</code>). If an error occurs during the query, the function will return a map with <code>:count</code> 0, <code>:last</code> <code>nil</code>, and <code>:items</code> an empty list.</p>
+<p><a name="example-with-query-parameters"></a></p>
+<h4 id="example-with-query-parameters">Example with Query Parameters</h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="p">(</span><span class="nf">base/fetch</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="p">[{</span><span class="ss">:age?gt</span><span class="w"> </span><span class="mi">30</span><span class="p">}</span><span class="w"> </span><span class="p">{</span><span class="ss">:name</span><span class="w"> </span><span class="s">&quot;Gulliver&quot;</span><span class="p">}]</span><span class="w"> </span><span class="p">{</span><span class="ss">:limit</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="ss">:desc</span><span class="w"> </span><span class="nv">true</span><span class="p">})</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="c1">; Returns: {:count 5 :last &quot;user-123&quot; :items [{:name &quot;Gulliver&quot; :age 35} ...]}</span>
+</code></pre></div>
 <p><a name="use-cases"></a></p>
 <h3 id="use-cases">Use Cases</h3>
 <p><a name="data-insertion"></a></p>
 <h4 id="data-insertion">Data Insertion</h4>
 <p>The <code>put</code> function's ability to accept any type of data makes it versatile for various use cases. Here are examples of inserting various types of data:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="p">(</span><span class="nf">base/put</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="p">{</span><span class="ss">:name</span><span class="w"> </span><span class="s">&quot;John Doe&quot;</span><span class="w"> </span><span class="ss">:age</span><span class="w"> </span><span class="mi">30</span><span class="p">})</span><span class="w"> </span><span class="c1">; Inserting a map</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="p">(</span><span class="nf">base/put</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="s">&quot;Hello, World!&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">; Inserting a string</span>
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="p">(</span><span class="nf">base/put</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="mi">42</span><span class="p">)</span><span class="w"> </span><span class="c1">; Inserting an integer</span>
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="p">(</span><span class="nf">base/put</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="mf">3.14</span><span class="p">)</span><span class="w"> </span><span class="c1">; Inserting a float</span>
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="p">(</span><span class="nf">base/put</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="nv">true</span><span class="p">)</span><span class="w"> </span><span class="c1">; Inserting a boolean</span>
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="p">(</span><span class="nf">base/put</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="nv">nil</span><span class="p">)</span><span class="w"> </span><span class="c1">; Inserting nil</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="p">(</span><span class="nf">base/put</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="p">{</span><span class="ss">:name</span><span class="w"> </span><span class="s">&quot;John Doe&quot;</span><span class="w"> </span><span class="ss">:age</span><span class="w"> </span><span class="mi">30</span><span class="p">})</span><span class="w"> </span><span class="c1">; Inserting a map</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="p">(</span><span class="nf">base/put</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="s">&quot;Hello, World!&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">; Inserting a string</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="p">(</span><span class="nf">base/put</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="mi">42</span><span class="p">)</span><span class="w"> </span><span class="c1">; Inserting an integer</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="p">(</span><span class="nf">base/put</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="mf">3.14</span><span class="p">)</span><span class="w"> </span><span class="c1">; Inserting a float</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="p">(</span><span class="nf">base/put</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="nv">true</span><span class="p">)</span><span class="w"> </span><span class="c1">; Inserting a boolean</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="p">(</span><span class="nf">base/put</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="nv">nil</span><span class="p">)</span><span class="w"> </span><span class="c1">; Inserting nil</span>
 </code></pre></div>
 <p>You can also use the <code>base/insert</code> command to insert data. The difference between <code>base/put</code> and <code>base/insert</code> is that <code>base/put</code> will insert data and update if the key already exists, while <code>base/insert</code> will throw an exception if the key already exists.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="p">(</span><span class="nf">base/insert</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="p">{</span><span class="ss">:name</span><span class="w"> </span><span class="s">&quot;John Doe&quot;</span><span class="w"> </span><span class="ss">:age</span><span class="w"> </span><span class="mi">30</span><span class="p">})</span><span class="w"> </span><span class="c1">; Inserting a map</span>
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="p">(</span><span class="nf">base/insert</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="s">&quot;Hello, World!&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">; Inserting a string</span>
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="p">(</span><span class="nf">base/insert</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="mi">42</span><span class="p">)</span><span class="w"> </span><span class="c1">; Inserting an integer</span>
-<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="p">(</span><span class="nf">base/insert</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="mf">3.14</span><span class="p">)</span><span class="w"> </span><span class="c1">; Inserting a float</span>
-<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="p">(</span><span class="nf">base/insert</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="nv">true</span><span class="p">)</span><span class="w"> </span><span class="c1">; Inserting a boolean</span>
-<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="p">(</span><span class="nf">base/insert</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="nv">nil</span><span class="p">)</span><span class="w"> </span><span class="c1">; Inserting nil</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="p">(</span><span class="nf">base/insert</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="p">{</span><span class="ss">:name</span><span class="w"> </span><span class="s">&quot;John Doe&quot;</span><span class="w"> </span><span class="ss">:age</span><span class="w"> </span><span class="mi">30</span><span class="p">})</span><span class="w"> </span><span class="c1">; Inserting a map</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="p">(</span><span class="nf">base/insert</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="s">&quot;Hello, World!&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">; Inserting a string</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="p">(</span><span class="nf">base/insert</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="mi">42</span><span class="p">)</span><span class="w"> </span><span class="c1">; Inserting an integer</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="p">(</span><span class="nf">base/insert</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="mf">3.14</span><span class="p">)</span><span class="w"> </span><span class="c1">; Inserting a float</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="p">(</span><span class="nf">base/insert</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="nv">true</span><span class="p">)</span><span class="w"> </span><span class="c1">; Inserting a boolean</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="p">(</span><span class="nf">base/insert</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="nv">nil</span><span class="p">)</span><span class="w"> </span><span class="c1">; Inserting nil</span>
 </code></pre></div>
 <p><a name="data-retrieval"></a></p>
 <h4 id="data-retrieval">Data Retrieval</h4>
 <p>To retrieve data from the database, you can use the <code>get</code> function. Here's an example of how to retrieve an item by its key:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="p">(</span><span class="nf">base/get</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="s">&quot;user-123&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="p">(</span><span class="nf">base/get</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="s">&quot;user-123&quot;</span><span class="p">)</span>
 </code></pre></div>
 <p><a name="data-removal"></a></p>
 <h4 id="data-removal">Data Removal</h4>
 <p>The <code>delete</code> function is useful for removing specific items from the database. Here's an example of how you can use this function to remove an item:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="p">(</span><span class="nf">base/delete</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="s">&quot;item-key&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">; Removes the item with the key &quot;item-key&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="p">(</span><span class="nf">base/delete</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="s">&quot;item-key&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">; Removes the item with the key &quot;item-key&quot;</span>
+</code></pre></div>
+<p><a name="data-fetching"></a></p>
+<h4 id="data-fetching">Data Fetching</h4>
+<p>To fetching data from the Deta Base, you can use the <code>fetch</code> function. Here's an example of how to fetch an item by its name:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="p">(</span><span class="nf">base/fetch</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="p">{</span><span class="ss">:name</span><span class="w"> </span><span class="s">&quot;John Doe&quot;</span><span class="p">})</span>
 </code></pre></div>
 
 

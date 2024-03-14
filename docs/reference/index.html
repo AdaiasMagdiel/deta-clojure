@@ -310,6 +310,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#fetch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fetch
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -418,6 +427,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#fetch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fetch
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -441,6 +459,7 @@
 <li><a href="#get">Get</a></li>
 <li><a href="#delete">Delete</a></li>
 <li><a href="#insert">Insert</a></li>
+<li><a href="#fetch">Fetch</a></li>
 </ul>
 <p><a name="base"></a></p>
 <h2 id="base">Base</h2>
@@ -483,6 +502,25 @@
 <ul>
 <li><strong>Return:</strong> Map containing the inserted data and the generated key (if not provided).</li>
 <li><strong>Exceptions:</strong> Throws an <code>Exception</code> if the data type is not supported, or if <code>deta-key</code> is invalid or not provided, or if an item with the provided key already exists.</li>
+</ul>
+<p><a name="fetch"></a></p>
+<h2 id="fetch">Fetch</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">(</span><span class="nf">fetch</span><span class="w"> </span><span class="nv">db</span><span class="p">)</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="p">(</span><span class="nf">fetch</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="nv">query</span><span class="p">)</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="p">(</span><span class="nf">fetch</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="nv">query</span><span class="w"> </span><span class="nv">parameters</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>db</code>: The database connection object.</li>
+<li><code>query</code>: A string or list of strings representing the query to be executed.</li>
+<li><code>parameters</code>: A map containing additional query parameters, including <code>limit</code>, <code>last</code>, and <code>desc</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Return:</strong> A map containing the number of items found (<code>:count</code>), the last key queried (<code>:last</code>), and a list of the items found (<code>:items</code>). If the query fails, it returns a map with <code>:count</code> 0, <code>:last</code> <code>nil</code>, and <code>:items</code> an empty list.</p>
+</li>
 </ul>
 
 
