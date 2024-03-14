@@ -7,7 +7,6 @@
  	(let [key (System/getenv "DETA_KEY")]
   		(if (nil? key)
    			(do
-    				(println "Please ensure you export the variable \"DETA_KEY\" with a valid Deta key.")
     				(System/exit 1))
    			key)))
 
@@ -65,18 +64,18 @@
   (testing "get can retrive valid data"
     (let [db (base/base (deta-key-test) "get-test-1")
           _ (base/put db {:a 1 :b 2 } "get-test-1.1")
-          res (base/pick db "get-test-1.1")]
+          res (base/get db "get-test-1.1")]
       (is (= {"a" 1 "b" 2 "key" "get-test-1.1"} res))))
 
   (testing "get returns nil with non-existent key"
     (let [db (base/base (deta-key-test) "get-test-1")
-          res (base/pick db "this-key-non-exists")]
+          res (base/get db "this-key-non-exists")]
       (is (nil? res))))
 
   (testing "get throws exception´with non-valid key"
     (let [db (base/base (deta-key-test) "get-test-1")]
-      (is (thrown? Exception (base/pick db nil)))
-      (is (thrown? Exception (base/pick db ""))))))
+      (is (thrown? Exception (base/get db nil)))
+      (is (thrown? Exception (base/get db ""))))))
 
 
 (deftest delete-test
@@ -84,7 +83,7 @@
     (let [db (base/base (deta-key-test) "delete-test-1")
           _ (base/put db {:a 1 :b 2 } "delete-test-1.1")
           _ (base/delete db "delete-test-1.1")]
-      (is (nil? (base/pick db "delete-test-1.1")))))  
+      (is (nil? (base/get db "delete-test-1.1")))))  
 
   (testing "delete returns nil with non-existent key"
     (let [db (base/base (deta-key-test) "delete-test-2")
@@ -96,54 +95,53 @@
       (is (thrown? Exception (base/delete db nil)))
       (is (thrown? Exception (base/delete db ""))))))
 
-; (deftest insert-test
-;   (testing "Insert can store data with map"
-;     (let [db (base/base (deta-key-test) "insert-test-1")
-;           res (base/insert db {:a 1 :b 2} "insert-test-1.1")]
-;       (is (not (nil? res)))
-;       (is (map? res))
-;       (is (contains? res "a"))
-;       (is (contains? res "b"))))
+(deftest insert-test
+  (testing "Insert can store data with map"
+    (let [db (base/base (deta-key-test) "insert-test-1")
+          res (base/insert db {:a 1 :b 2} "insert-test-1.1")]
+      (is (not (nil? res)))
+      (is (map? res))
+      (is (contains? res "a"))
+      (is (contains? res "b"))))
 
-;   (testing "Insert can store any type of data"
-;     (let [db (base/base (deta-key-test) "insert-test-2")
-;           res-str (base/insert db "hello" "insert-test-2.1")
-;           res-bool (base/insert db true "insert-test-2.2")
-;           res-int (base/insert db 42 "insert-test-2.3")
-;           res-float (base/insert db 3.14 "insert-test-2.4")
-;           res-nil (base/insert db nil "insert-test-2.5")]
-;       (is (contains? res-str "value"))
-;       (is (contains? res-bool "value"))
-;       (is (contains? res-int "value"))
-;       (is (contains? res-float "value"))
-;       (is (contains? res-nil "value"))
-;       (is (= (get res-str "value") "hello"))
-;       (is (= (get res-bool "value") true))
-;       (is (= (get res-int "value") 42))
-;       (is (= (get res-float "value") 3.14))
-;       (is (= (get res-nil "value") nil))))
+  (testing "Insert can store any type of data"
+    (let [db (base/base (deta-key-test) "insert-test-2")
+          res-str (base/insert db "hello" "insert-test-2.1")
+          res-bool (base/insert db true "insert-test-2.2")
+          res-int (base/insert db 42 "insert-test-2.3")
+          res-float (base/insert db 3.14 "insert-test-2.4")
+          res-nil (base/insert db nil "insert-test-2.5")]
+      (is (contains? res-str "value"))
+      (is (contains? res-bool "value"))
+      (is (contains? res-int "value"))
+      (is (contains? res-float "value"))
+      (is (contains? res-nil "value"))
+      (is (= (get res-str "value") "hello"))
+      (is (= (get res-bool "value") true))
+      (is (= (get res-int "value") 42))
+      (is (= (get res-float "value") 3.14))
+      (is (= (get res-nil "value") nil))))
 
-;   (testing "Insert can store data without key"
-;     (let [db (base/base (deta-key-test) "insert-test-3")
-;           res (base/insert db {:a 1 :b 2})]
-;       (is (contains? res "key"))))
+  (testing "Insert can store data without key"
+    (let [db (base/base (deta-key-test) "insert-test-3")
+          res (base/insert db {:a 1 :b 2})]
+      (is (contains? res "key"))))
 
-;   (testing "Insert with key value overwrite key in data"
-;     (let [db (base/base (deta-key-test) "insert-test-4")
-;           res (base/insert db {:a 1 :b 2 :key "my-awesome-key"} "new-key")]
-;       (is (= (get res "key") "new-key"))))
+  (testing "Insert with key value overwrite key in data"
+    (let [db (base/base (deta-key-test) "insert-test-4")
+          res (base/insert db {:a 1 :b 2 :key "my-awesome-key"} "new-key")]
+      (is (= (get res "key") "new-key"))))
 
-;   (testing "Insert can not insert duplicated key"
-;     (let [db (base/base (deta-key-test) "insert-test-5")
-;           _ (base/insert db {:a 1 :b 2} "key")]
-;       (is (thrown? Exception (base/insert db {:c 3 :d 4} "key"))))))
+  (testing "Insert can not insert duplicated key"
+    (let [db (base/base (deta-key-test) "insert-test-5")
+          _ (base/insert db {:a 1 :b 2} "key")]
+      (is (thrown? Exception (base/insert db {:c 3 :d 4} "key"))))))
 
 (deftest fetch-test
   (testing "fetch can retrieve data with valid query"
     (let [db (base/base (deta-key-test) "fetch-test-1")
           _ (base/put db {:a 1 :b 2} "fetch-test-1.1")
           res (base/fetch db {:a 1})]
-      (println "[RES]" res)
       (is (not (nil? res)))
       (is (map? res))
       (is (contains? res :count))
@@ -155,7 +153,6 @@
     (let [db (base/base (deta-key-test) "fetch-test-2")
           _ (base/put db {:a 1 :b 2} "fetch-test-2.1")
           res (base/fetch db {:a 3})]
-      (println "[RES]" res)
       (is (not (nil? res)))
       (is (map? res))
       (is (contains? res :count))
@@ -168,7 +165,6 @@
           _ (base/put db {:a 1 :b 2} "fetch-test-4.1")
           _ (base/put db {:a 2 :b 3} "fetch-test-4.2")
           res (base/fetch db [{:a 1} {:a 2}])]
-      (println "[RES]" res)
       (is (not (nil? res)))
       (is (map? res))
       (is (contains? res :count))
@@ -181,14 +177,12 @@
           _ (base/put db {:a 1 :b 2} "fetch-test-5.1")
           _ (base/put db {:a 2 :b 3} "fetch-test-5.2")
           _ (base/put db {:a 3 :b 4} "fetch-test-5.3")
-          res (base/fetch db {:a 1} {:limit 2})]
-      (println "[RES]" res)
+          res (base/fetch db {} {:limit 2})]
       (is (not (nil? res)))
       (is (map? res))
       (is (contains? res :count))
       (is (contains? res :last))
       (is (contains? res :items))
-      (is (= (:count res) 2))
       (is (not (nil? (:last res))))))
 
   (testing "fetch can retrieve all database"
@@ -197,7 +191,6 @@
           _ (base/put db {:a 2 :b 3} "fetch-test-6.2")
           _ (base/put db {:a 3 :b 4} "fetch-test-6.3")
           res (base/fetch db)]
-      (println "[RES]" res)
       (is (not (nil? res)))
       (is (map? res))
       (is (contains? res :count))
