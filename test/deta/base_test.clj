@@ -137,3 +137,65 @@
     (let [db (base/base (deta-key-test) "insert-test-5")
           _ (base/insert db {:a 1 :b 2} "key")]
       (is (thrown? Exception (base/insert db {:c 3 :d 4} "key"))))))
+
+(defn fetch-test []
+  (testing "fetch can retrieve data with valid query"
+    (let [db (base/base (deta-key-test) "fetch-test-1")
+          _ (base/put db {:a 1 :b 2} "fetch-test-1.1")
+          res (base/fetch db {:a 1})]
+      (is (not (nil? res)))
+      (is (map? res))
+      (is (contains? res :count))
+      (is (contains? res :last))
+      (is (contains? res :items))
+      (is (> (:count res) 0))))
+
+  (testing "fetch returns empty result with non-matching query"
+    (let [db (base/base (deta-key-test) "fetch-test-2")
+          _ (base/put db {:a 1 :b 2} "fetch-test-2.1")
+          res (base/fetch db {:a 3})]
+      (is (not (nil? res)))
+      (is (map? res))
+      (is (contains? res :count))
+      (is (contains? res :last))
+      (is (contains? res :items))
+      (is (= (:count res) 0))))
+
+  (testing "fetch can handle multiple queries"
+    (let [db (base/base (deta-key-test) "fetch-test-4")
+          _ (base/put db {:a 1 :b 2} "fetch-test-4.1")
+          _ (base/put db {:a 2 :b 3} "fetch-test-4.2")
+          res (base/fetch db [{:a 1} {:a 2}])]
+      (is (not (nil? res)))
+      (is (map? res))
+      (is (contains? res :count))
+      (is (contains? res :last))
+      (is (contains? res :items))
+      (is (> (:count res) 0))))
+
+  (testing "fetch can handle pagination"
+    (let [db (base/base (deta-key-test) "fetch-test-5")
+          _ (base/put db {:a 1 :b 2} "fetch-test-5.1")
+          _ (base/put db {:a 2 :b 3} "fetch-test-5.2")
+          _ (base/put db {:a 3 :b 4} "fetch-test-5.3")
+          res (base/fetch db {:a 1} {:limit 2})]
+      (is (not (nil? res)))
+      (is (map? res))
+      (is (contains? res :count))
+      (is (contains? res :last))
+      (is (contains? res :items))
+      (is (= (:count res) 2))
+      (is (not (nil? (:last res))))))
+
+  (testing "fetch can retrieve all database"
+    (let [db (base/base (deta-key-test) "fetch-test-6")
+          _ (base/put db {:a 1 :b 2} "fetch-test-6.1")
+          _ (base/put db {:a 2 :b 3} "fetch-test-6.2")
+          _ (base/put db {:a 3 :b 4} "fetch-test-6.3")
+          res (base/fetch db)]
+      (is (not (nil? res)))
+      (is (map? res))
+      (is (contains? res :count))
+      (is (contains? res :last))
+      (is (contains? res :items))
+      (is (= (:count res) 3)))))
