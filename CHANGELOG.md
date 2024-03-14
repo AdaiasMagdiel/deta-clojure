@@ -88,3 +88,22 @@
 -   Removed the `doc/intro.md`, `doc/reference.md`, and `doc/usage.md` files, as they have been consolidated into the docs branch for improved documentation structure.
 
 [0.0.4]: https://github.com/AdaiasMagdiel/deta-clojure/compare/v0.0.3...v0.0.4
+
+## [0.0.5] - 2024-03-14
+
+### Added
+
+- No additions in this version.
+
+### Changed
+
+- Change in the `insert` function in `src/deta/base.clj` to check if the query is a vector instead of a list.
+- Fix the fetch function in `src/deta/base.clj` to handle 200 status responses and extract pagination and items information from the JSON response.
+- Update of tests in `test/deta/base_test.clj` to reflect changes in the fetch function.
+- Library version update to 0.0.5 in `README.md` and `project.clj`.
+
+### Removed
+
+- No removals in this version.
+
+[0.0.5]: https://github.com/AdaiasMagdiel/deta-clojure/compare/v0.0.4...v0.0.5
