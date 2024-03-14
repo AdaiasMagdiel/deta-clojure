@@ -26,14 +26,14 @@
                     {:body (json/write-str {:items [data]})
                      :content-type :json
                      :headers {"X-API-Key" (:deta-key db)}
-                     :throw-exceptions false})]
-     (let [json-data (json/read-str (:body response))]
-       (if (and (= 207 (:status response)) (contains? json-data "processed"))
-         (-> json-data
-           (get "processed")
-           (get "items")
-           first)
-         nil)))))
+                     :throw-exceptions false})
+         json-data (json/read-str (:body response))]
+     (if (and (= 207 (:status response)) (contains? json-data "processed"))
+       (-> json-data
+         (get "processed")
+         (get "items")
+         first)
+       nil))))
 
 (defn get [db key]
   (when (or (nil? key) (empty? key))
@@ -68,13 +68,13 @@
                     {:body (json/write-str {:item data})
                      :content-type :json
                      :headers {"X-API-Key" (:deta-key db)}
-                     :throw-exceptions false})]
-     (let [json-data (json/read-str (:body response))
-           status (:status response)]
-       (cond
-         (= 201 status) json-data
-         (= 409 status) (throw (Exception. (str "An item with key \"" key "\" already exists.")))
-         :else nil)))))
+                     :throw-exceptions false})
+         json-data (json/read-str (:body response))
+         status (:status response)]
+     (cond
+       (= 201 status) json-data
+       (= 409 status) (throw (Exception. (str "An item with key \"" key "\" already exists.")))
+       :else nil))))
 
 (defn fetch
   ([db] (fetch db {} {}))
@@ -84,19 +84,19 @@
          last (:last parameters nil)
          sort (if (:desc parameters false) "desc" "asc")
          queries (if (vector? query) query [query])
-         payload {:query queries :limit limit :last last :sort sort}]
-     (let [response (client/post (str (:base-url db) "/query")
-                      {:body (json/write-str payload)
-                       :content-type :json
-                       :headers {"X-API-Key" (:deta-key db)}
-                       :throw-exceptions false})
-           json-data (json/read-str (:body response))
-           status (:status response)]
-       (cond
-         (= 200 status)
-         (let [paging (clojure.core/get json-data "paging")
-               count (clojure.core/get paging "size")
-               last (clojure.core/get paging "last")
-               items (clojure.core/get json-data "items")]
-           {:count count :last last :items items})
-         :else {:count 0 :last nil :items []})))))
+         payload {:query queries :limit limit :last last :sort sort}
+         response (client/post (str (:base-url db) "/query")
+                    {:body (json/write-str payload)
+                     :content-type :json
+                     :headers {"X-API-Key" (:deta-key db)}
+                     :throw-exceptions false})
+         json-data (json/read-str (:body response))
+         status (:status response)]
+     (cond
+       (= 200 status)
+       (let [paging (clojure.core/get json-data "paging")
+             count (clojure.core/get paging "size")
+             last (clojure.core/get paging "last")
+             items (clojure.core/get json-data "items")]
+         {:count count :last last :items items})
+       :else {:count 0 :last nil :items []}))))
