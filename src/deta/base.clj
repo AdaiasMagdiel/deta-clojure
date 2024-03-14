@@ -76,3 +76,24 @@
          (= 201 status) json-data
          (= 409 status) (throw (Exception. (str "An item with key \"" key "\" already exists.")))
          :else nil)))))
+
+(defn fetch
+  ([db] (fetch db [] []))
+  ([db query] (fetch db query []))
+  ([db query parameters] 
+   (let [limit (:limit parameters 1000)
+         last (:last parameters nil)
+         sort (if (:desc parameters false) "desc" "asc")
+         queries (if (list? query) query [query])
+         payload [:query queries :limit limit :last last :sort sort]]
+     (let [response (client/post (str (:base-url db) "/query")
+                      {:body (json/write-str payload)
+                       :content-type :json
+                       :headers {"X-API-Key" (:deta-key db)}
+                       :throw-exceptions false})
+           json-data (json/read-str (:body response))
+           status (:status response)]
+       (cond
+         (= 400 status) [:count 0 :last nil :items []]
+         :else (let [paging (:paging json-data)]
+                 [:count (:size paging) :last (:last paging) :items (:items json-data)]))))))
