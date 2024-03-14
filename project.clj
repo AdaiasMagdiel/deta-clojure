@@ -1,4 +1,4 @@
-(defproject com.adaiasmagdiel/deta "0.0.3"
+(defproject com.adaiasmagdiel/deta "0.0.4"
   :description "A Clojure library designed to simplify interactions with the Deta database. It provides a straightforward way to initialize a database connection and perform operations."
   :url "http://github.com/AdaiasMagdiel/deta-clojure"
   :license {:name "MIT"
