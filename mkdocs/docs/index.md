@@ -74,7 +74,7 @@ Deta is a Clojure library designed to simplify interactions with the Deta databa
 Add the following dependency to your `project.clj`:
 
 ```clojure
-[com.adaiasmagdiel/deta "0.0.3"]
+[com.adaiasmagdiel/deta "0.0.4"]
 ```
 
 <a name="clojure-clidepsedn"></a>
@@ -84,7 +84,7 @@ Add the following dependency to your `project.clj`:
 Add the following dependency to your `deps.edn`:
 
 ```clojure
-com.adaiasmagdiel/deta {:mvn/version "0.0.3"}
+com.adaiasmagdiel/deta {:mvn/version "0.0.4"}
 ```
 
 <a name="gradle"></a>
@@ -94,7 +94,7 @@ com.adaiasmagdiel/deta {:mvn/version "0.0.3"}
 Add the following dependency to your `build.gradle`:
 
 ```gradle
-implementation("com.adaiasmagdiel:deta:0.0.3")
+implementation("com.adaiasmagdiel:deta:0.0.4")
 ```
 
 <a name="maven"></a>
@@ -107,7 +107,7 @@ Add the following dependency to your `pom.xml`:
 <dependency>
  <groupId>com.adaiasmagdiel</groupId>
  <artifactId>deta</artifactId>
- <version>0.0.3</version>
+ <version>0.0.4</version>
 </dependency>
 ```
 
