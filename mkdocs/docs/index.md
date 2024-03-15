@@ -6,17 +6,12 @@
 
 Deta is a Clojure library designed to simplify interactions with the Deta database. It provides a straightforward way to initialize a database connection and perform basic operations such as inserting data. This library is ideal for developers looking to integrate Deta database functionality into their Clojure applications.
 
-## Features
-
--  **Database Initialization**: Easily establish a connection to a Deta database with a straightforward function call.
--  **Data Insertion**: Insert data into the Deta database, supporting various data types.
--  **Data Update**: Update existing data in the Deta database or insert new data if the key does not exist.
--  **Data Retrieval**: Fetch data from the Deta database by specifying a key.
--  **Data Deletion**: Remove data from the Deta database by specifying a key.
--  **Testing**: A comprehensive test suite is essential to ensure reliability and accuracy.
-
 ## Table of Contents
 
+-  [Project Progress](#project-progress)
+   -  [Deta Base](#deta-base)
+   -  [Deta Drive](#deta-drive)
+-  [Features](#features)
 -  [Installation](#installation)
    -  [Leiningen/Boot](#leiningenboot)
    -  [Clojure CLI/deps.edn](#clojure-clidepsedn)
@@ -65,6 +60,48 @@ Deta is a Clojure library designed to simplify interactions with the Deta databa
    -  [Delete](./reference.md#delete)
    -  [Insert](./reference.md#insert)
    -  [Fetch](./reference.md#fetch)
+
+## Project Progress
+
+The current focus is on implementing functions for Deta Base, with Deta Drive functionalities yet to be started.
+
+### Deta Base
+
+The Deta Base API provides a range of functionalities for data manipulation. The following functions have been implemented:
+
+-  [x] **Base Object**: Creation and configuration of the base object for API interaction.
+-  [x] **Put**: Insertion of an object into the database.
+-  [x] **Get**: Retrieval of a specific object from the database.
+-  [x] **Insert**: Insertion of a new object into the database.
+-  [x] **Fetch**: Retrieval of objects based on specific criteria.
+-  [x] **Delete**: Removal of an object from the database.
+
+The remaining functions to be implemented are:
+
+-  [ ] **Put Many**: Insertion of multiple objects into the database at once.
+-  [ ] **Update**: Update of an existing object in the database.
+
+### Deta Drive
+
+Deta Drive offers functionalities for file storage and manipulation. As of now, work on Deta Drive functionalities has not yet begun. The planned functionalities include:
+
+-  [ ] **Drive Object**: Creation and configuration of the drive object for API interaction.
+-  [ ] **Put**: Upload of a file to Deta Drive.
+-  [ ] **Get**: Download of a specific file from Deta Drive.
+-  [ ] **Delete**: Removal of a file from Deta Drive.
+-  [ ] **List**: Listing of available files in Deta Drive.
+-  [ ] **Delete Many**: Removal of multiple files from Deta Drive at once.
+
+This project is under continuous development, with the goal of providing a robust and efficient solution for interacting with the Deta Space API in Clojure. Follow the progress and contribute with suggestions or implementations of new functionalities.
+
+## Features
+
+-  **Database Initialization**: Easily establish a connection to a Deta database with a straightforward function call.
+-  **Data Insertion**: Insert data into the Deta database, supporting various data types.
+-  **Data Update**: Update existing data in the Deta database or insert new data if the key does not exist.
+-  **Data Retrieval**: Fetch data from the Deta database by specifying a key.
+-  **Data Deletion**: Remove data from the Deta database by specifying a key.
+-  **Testing**: A comprehensive test suite is essential to ensure reliability and accuracy.
 
 <a name="installation"></a>
 
