@@ -16,11 +16,12 @@ Deta is a Clojure library designed to simplify interactions with the Deta databa
 -   [Getting Started](#getting-started)
     -   [Prerequisites](#prerequisites)
     -   [Installation](#installation)
-    -   [Usage](#usage)
+    -   [Simple Usage](#simple-usage)
         -   [Initializing a Deta Base Connection](#initializing-a-deta-base-connection)
         -   [Inserting Data](#inserting-data)
         -   [Retrieving Data](#retrieving-data)
-        -   [Deleting Dataa](#deleting-data)
+        -   [Deleting Data](#deleting-data)
+        -   [Fetching Data](#deleting-data)
 -   [Testing](#testing)
     -   [Windows](#windows)
     -   [Linux/MacOS](#linuxmacos)
@@ -91,7 +92,7 @@ This library is now available as a dependency. You can add it to your project us
 
 For more installation methods, such as `Clojure CLI/deps.edn`, `Gradle`, and `Maven`, please refer to the [installation](https://adaiasmagdiel.github.io/deta-clojure/#installation) section of our documentation.
 
-### Usage
+### Simple Usage
 
 #### Initializing a Deta Base Connection
 
@@ -123,6 +124,14 @@ Please refer to the [documentation](https://adaiasmagdiel.github.io/deta-clojure
 
 ```clojure
 (base/delete db "item-key")
+```
+
+#### Fetching Data
+
+```clojure
+(fetch db) ; Fetch all records
+(fetch db {:name "Jane Doe"}) ; Fetch only records with name = "Jane Doe"
+(fetch db {:name "Jane Doe"} {:limit 1 :desc true}) ; Use parameters to modify fetching
 ```
 
 For more detailed usage instructions and examples, please refer to the [usage](https://adaiasmagdiel.github.io/deta-clojure/usage/#getting-started) section of our documentation.
