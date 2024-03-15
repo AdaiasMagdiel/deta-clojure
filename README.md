@@ -8,6 +8,9 @@ Deta is a Clojure library designed to simplify interactions with the Deta databa
 
 ## Table of Contents
 
+-   [Project Progress](#project-progress)
+    -   [Deta Base](#deta-base)
+    -   [Deta Drive](#deta-drive)
 -   [Features](#features)
 -   [Documentation](#documentation)
 -   [Getting Started](#getting-started)
@@ -24,6 +27,39 @@ Deta is a Clojure library designed to simplify interactions with the Deta databa
 -   [Contributing](#contributing)
 -   [License](#license)
 -   [Contact](#contact)
+
+## Project Progress
+
+The current focus is on implementing functions for Deta Base, with Deta Drive functionalities yet to be started.
+
+### Deta Base
+
+The Deta Base API provides a range of functionalities for data manipulation. The following functions have been implemented:
+
+-   [x] **Base Object**: Creation and configuration of the base object for API interaction.
+-   [x] **Put**: Insertion of an object into the database.
+-   [x] **Get**: Retrieval of a specific object from the database.
+-   [x] **Insert**: Insertion of a new object into the database.
+-   [x] **Fetch**: Retrieval of objects based on specific criteria.
+-   [x] **Delete**: Removal of an object from the database.
+
+The remaining functions to be implemented are:
+
+-   [ ] **Put Many**: Insertion of multiple objects into the database at once.
+-   [ ] **Update**: Update of an existing object in the database.
+
+### Deta Drive
+
+Deta Drive offers functionalities for file storage and manipulation. As of now, work on Deta Drive functionalities has not yet begun. The planned functionalities include:
+
+-   [ ] **Drive Object**: Creation and configuration of the drive object for API interaction.
+-   [ ] **Put**: Upload of a file to Deta Drive.
+-   [ ] **Get**: Download of a specific file from Deta Drive.
+-   [ ] **Delete**: Removal of a file from Deta Drive.
+-   [ ] **List**: Listing of available files in Deta Drive.
+-   [ ] **Delete Many**: Removal of multiple files from Deta Drive at once.
+
+This project is under continuous development, with the goal of providing a robust and efficient solution for interacting with the Deta Space API in Clojure. Follow the progress and contribute with suggestions or implementations of new functionalities.
 
 ## Features
 
