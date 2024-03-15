@@ -235,18 +235,51 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#features" class="md-nav__link">
+  <a href="#table-of-contents" class="md-nav__link">
     <span class="md-ellipsis">
-      Features
+      Table of Contents
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#table-of-contents" class="md-nav__link">
+  <a href="#project-progress" class="md-nav__link">
     <span class="md-ellipsis">
-      Table of Contents
+      Project Progress
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Project Progress">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#deta-base" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deta Base
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deta-drive" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deta Drive
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Features
     </span>
   </a>
   
@@ -420,18 +453,51 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#features" class="md-nav__link">
+  <a href="#table-of-contents" class="md-nav__link">
     <span class="md-ellipsis">
-      Features
+      Table of Contents
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#table-of-contents" class="md-nav__link">
+  <a href="#project-progress" class="md-nav__link">
     <span class="md-ellipsis">
-      Table of Contents
+      Project Progress
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Project Progress">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#deta-base" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deta Base
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deta-drive" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deta Drive
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Features
     </span>
   </a>
   
@@ -550,17 +616,12 @@
 <a href="https://opensource.org/licenses/MIT"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" /></a>
 <a href="https://adaiasmagdiel.github.io/deta-clojure/"><img alt="Documentation" src="https://img.shields.io/badge/MKDocs-Documentation-green.svg" /></a></p>
 <p>Deta is a Clojure library designed to simplify interactions with the Deta database. It provides a straightforward way to initialize a database connection and perform basic operations such as inserting data. This library is ideal for developers looking to integrate Deta database functionality into their Clojure applications.</p>
-<h2 id="features">Features</h2>
-<ul>
-<li><strong>Database Initialization</strong>: Easily establish a connection to a Deta database with a straightforward function call.</li>
-<li><strong>Data Insertion</strong>: Insert data into the Deta database, supporting various data types.</li>
-<li><strong>Data Update</strong>: Update existing data in the Deta database or insert new data if the key does not exist.</li>
-<li><strong>Data Retrieval</strong>: Fetch data from the Deta database by specifying a key.</li>
-<li><strong>Data Deletion</strong>: Remove data from the Deta database by specifying a key.</li>
-<li><strong>Testing</strong>: A comprehensive test suite is essential to ensure reliability and accuracy.</li>
-</ul>
 <h2 id="table-of-contents">Table of Contents</h2>
 <ul>
+<li><a href="#project-progress">Project Progress</a></li>
+<li><a href="#deta-base">Deta Base</a></li>
+<li><a href="#deta-drive">Deta Drive</a></li>
+<li><a href="#features">Features</a></li>
 <li><a href="#installation">Installation</a></li>
 <li><a href="#leiningenboot">Leiningen/Boot</a></li>
 <li><a href="#clojure-clidepsedn">Clojure CLI/deps.edn</a></li>
@@ -623,6 +684,43 @@
 <li><a href="reference/#delete">Delete</a></li>
 <li><a href="reference/#insert">Insert</a></li>
 <li><a href="reference/#fetch">Fetch</a></li>
+</ul>
+<h2 id="project-progress">Project Progress</h2>
+<p>The current focus is on implementing functions for Deta Base, with Deta Drive functionalities yet to be started.</p>
+<h3 id="deta-base">Deta Base</h3>
+<p>The Deta Base API provides a range of functionalities for data manipulation. The following functions have been implemented:</p>
+<ul>
+<li>[x] <strong>Base Object</strong>: Creation and configuration of the base object for API interaction.</li>
+<li>[x] <strong>Put</strong>: Insertion of an object into the database.</li>
+<li>[x] <strong>Get</strong>: Retrieval of a specific object from the database.</li>
+<li>[x] <strong>Insert</strong>: Insertion of a new object into the database.</li>
+<li>[x] <strong>Fetch</strong>: Retrieval of objects based on specific criteria.</li>
+<li>[x] <strong>Delete</strong>: Removal of an object from the database.</li>
+</ul>
+<p>The remaining functions to be implemented are:</p>
+<ul>
+<li>[ ] <strong>Put Many</strong>: Insertion of multiple objects into the database at once.</li>
+<li>[ ] <strong>Update</strong>: Update of an existing object in the database.</li>
+</ul>
+<h3 id="deta-drive">Deta Drive</h3>
+<p>Deta Drive offers functionalities for file storage and manipulation. As of now, work on Deta Drive functionalities has not yet begun. The planned functionalities include:</p>
+<ul>
+<li>[ ] <strong>Drive Object</strong>: Creation and configuration of the drive object for API interaction.</li>
+<li>[ ] <strong>Put</strong>: Upload of a file to Deta Drive.</li>
+<li>[ ] <strong>Get</strong>: Download of a specific file from Deta Drive.</li>
+<li>[ ] <strong>Delete</strong>: Removal of a file from Deta Drive.</li>
+<li>[ ] <strong>List</strong>: Listing of available files in Deta Drive.</li>
+<li>[ ] <strong>Delete Many</strong>: Removal of multiple files from Deta Drive at once.</li>
+</ul>
+<p>This project is under continuous development, with the goal of providing a robust and efficient solution for interacting with the Deta Space API in Clojure. Follow the progress and contribute with suggestions or implementations of new functionalities.</p>
+<h2 id="features">Features</h2>
+<ul>
+<li><strong>Database Initialization</strong>: Easily establish a connection to a Deta database with a straightforward function call.</li>
+<li><strong>Data Insertion</strong>: Insert data into the Deta database, supporting various data types.</li>
+<li><strong>Data Update</strong>: Update existing data in the Deta database or insert new data if the key does not exist.</li>
+<li><strong>Data Retrieval</strong>: Fetch data from the Deta database by specifying a key.</li>
+<li><strong>Data Deletion</strong>: Remove data from the Deta database by specifying a key.</li>
+<li><strong>Testing</strong>: A comprehensive test suite is essential to ensure reliability and accuracy.</li>
 </ul>
 <p><a name="installation"></a></p>
 <h2 id="installation">Installation</h2>
