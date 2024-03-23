@@ -4,12 +4,31 @@
     [deta.base :as base]))
 
 (defn deta-key-test []
- 	(let [key (System/getenv "DETA_KEY")]
-  		(if (nil? key)
-   			(do
+  (let [key (System/getenv "DETA_KEY")]
+    (if (nil? key)
+      (do
         (println "Please ensure you export the variable \"DETA_KEY\" with a valid Deta key.")
-     			(System/exit 1))
-   			key)))
+        (System/exit 1))
+      key)))
+
+(defn teardown []
+  (println "Cleaning database...")
+  (doseq [key [
+               "put-test-1" "put-test-2" "put-test-3" "put-test-4"
+               "get-test-1"
+               "delete-test-1" "delete-test-2" "delete-test-3" "delete-test-4"
+               "insert-test-1" "insert-test-2" "insert-test-3" "insert-test-4" "insert-test-5"
+               "fetch-test-1" "fetch-test-2" "fetch-test-3" "fetch-test-4" "fetch-test-5" "fetch-test-6"]]
+    (let [db (base/base (deta-key-test) key)
+          res (base/fetch db)]
+      (doseq [item (:items res)]
+        (base/delete db (get item "key"))))))
+
+(defn my-fixture [f]
+  (f)
+  (teardown))
+
+(use-fixtures :once my-fixture)
 
 (deftest base-test
   (testing "base can return valid information"
@@ -57,7 +76,7 @@
       (is (contains? res "key"))))
 
   (testing "Put with key value overwrite key in data"
-    (let [db (base/base (deta-key-test) "put-test-3")
+    (let [db (base/base (deta-key-test) "put-test-4")
           res (base/put db {:a 1 :b 2 :key "my-awesome-key"} "new-key")]
       (is (= (get res "key") "new-key")))))
 
