@@ -87,7 +87,7 @@ To fully understand how to use this software, referring to the comprehensive doc
 This library is now available as a dependency. You can add it to your project using Leiningen/Boot by including the following in your `project.clj` dependencies:
 
 ```clojure
-[com.adaiasmagdiel/deta "0.0.5"]
+[com.adaiasmagdiel/deta "0.0.6"]
 ```
 
 For more installation methods, such as `Clojure CLI/deps.edn`, `Gradle`, and `Maven`, please refer to the [installation](https://adaiasmagdiel.github.io/deta-clojure/#installation) section of our documentation.
