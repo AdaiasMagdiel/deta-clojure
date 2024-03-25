@@ -319,6 +319,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#update" class="md-nav__link">
+    <span class="md-ellipsis">
+      Update
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -436,6 +445,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#update" class="md-nav__link">
+    <span class="md-ellipsis">
+      Update
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -460,6 +478,7 @@
 <li><a href="#delete">Delete</a></li>
 <li><a href="#insert">Insert</a></li>
 <li><a href="#fetch">Fetch</a></li>
+<li><a href="#update">Update</a></li>
 </ul>
 <p><a name="base"></a></p>
 <h2 id="base">Base</h2>
@@ -505,9 +524,9 @@
 </ul>
 <p><a name="fetch"></a></p>
 <h2 id="fetch">Fetch</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">(</span><span class="nf">fetch</span><span class="w"> </span><span class="nv">db</span><span class="p">)</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="p">(</span><span class="nf">fetch</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="nv">query</span><span class="p">)</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="p">(</span><span class="nf">fetch</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="nv">query</span><span class="w"> </span><span class="nv">parameters</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">(</span><span class="nf">base/fetch</span><span class="w"> </span><span class="nv">db</span><span class="p">)</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="p">(</span><span class="nf">base/fetch</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="nv">query</span><span class="p">)</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="p">(</span><span class="nf">base/fetch</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="nv">query</span><span class="w"> </span><span class="nv">parameters</span><span class="p">)</span>
 </code></pre></div>
 <ul>
 <li>
@@ -520,6 +539,24 @@
 </li>
 <li>
 <p><strong>Return:</strong> A map containing the number of items found (<code>:count</code>), the last key queried (<code>:last</code>), and a list of the items found (<code>:items</code>). If the query fails, it returns a map with <code>:count</code> 0, <code>:last</code> <code>nil</code>, and <code>:items</code> an empty list.</p>
+</li>
+</ul>
+<p><a name="update"></a></p>
+<h2 id="update">Update</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">(</span><span class="nf">base/update</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="nb">key </span><span class="nv">updates</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li><strong>Parameters:</strong></li>
+<li><code>db</code>: The database connection object.</li>
+<li><code>key</code>: The key of the item to be updated.</li>
+<li>
+<p><code>updates</code>: A map containing the updates to be applied to the item. Please refer to the <a href="https://deta.space/docs/en/build/reference/http-api/base#update-item">Deta Base documentation</a> to know more.</p>
+</li>
+<li>
+<p><strong>Return:</strong> <code>nil</code>. The function does not return a meaningful value as its purpose is to update an item in the database.</p>
+</li>
+<li>
+<p><strong>Exceptions:</strong> Throws an <code>Exception</code> if the key is not provided or is empty, if there is no item with the provided key, or the payload is incorrect or malformatted.</p>
 </li>
 </ul>
 

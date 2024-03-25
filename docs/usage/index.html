@@ -549,6 +549,57 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#using-the-update-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using the update Function
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Using the update Function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-usage_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Usage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return-value-and-exceptions_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Return Value and Exceptions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-of-use_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example of Use
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#use-cases" class="md-nav__link">
     <span class="md-ellipsis">
       Use Cases
@@ -589,6 +640,15 @@
   <a href="#data-fetching" class="md-nav__link">
     <span class="md-ellipsis">
       Data Fetching
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-updating" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Updating
     </span>
   </a>
   
@@ -913,6 +973,57 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#using-the-update-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using the update Function
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Using the update Function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-usage_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Usage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return-value-and-exceptions_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Return Value and Exceptions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-of-use_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example of Use
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#use-cases" class="md-nav__link">
     <span class="md-ellipsis">
       Use Cases
@@ -953,6 +1064,15 @@
   <a href="#data-fetching" class="md-nav__link">
     <span class="md-ellipsis">
       Data Fetching
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-updating" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Updating
     </span>
   </a>
   
@@ -1023,11 +1143,19 @@
 <li><a href="#example-with-query-parameters">Example with Query Parameters</a></li>
 </ul>
 </li>
+<li><a href="#using-the-update-function">Using the <code>update</code> Function</a><ul>
+<li><a href="#basic-usage-update">Basic Usage</a></li>
+<li><a href="#parameters-update">Parameters</a></li>
+<li><a href="#return-value-and-exceptions-update">Return Value and Exceptions</a></li>
+<li><a href="#example-of-use-update">Example of Use</a></li>
+</ul>
+</li>
 <li><a href="#use-cases">Use Cases</a><ul>
 <li><a href="#data-insertion">Data Insertion</a></li>
 <li><a href="#data-retrieval">Data Retrieval</a></li>
 <li><a href="#data-removal">Data Removal</a></li>
 <li><a href="#data-fetching">Data Fetching</a></li>
+<li><a href="#data-updating">Data Updating</a></li>
 </ul>
 </li>
 </ul>
@@ -1141,40 +1269,75 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="p">(</span><span class="nf">base/fetch</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="p">[{</span><span class="ss">:age?gt</span><span class="w"> </span><span class="mi">30</span><span class="p">}</span><span class="w"> </span><span class="p">{</span><span class="ss">:name</span><span class="w"> </span><span class="s">&quot;Gulliver&quot;</span><span class="p">}]</span><span class="w"> </span><span class="p">{</span><span class="ss">:limit</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="ss">:desc</span><span class="w"> </span><span class="nv">true</span><span class="p">})</span>
 <a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="c1">; Returns: {:count 5 :last &quot;user-123&quot; :items [{:name &quot;Gulliver&quot; :age 35} ...]}</span>
 </code></pre></div>
+<p><a name="using-the-update-function"></a></p>
+<h3 id="using-the-update-function">Using the <code>update</code> Function</h3>
+<p>The <code>update</code> function allows you to modify an existing item in the database by providing a key and a map of updates. This function is particularly useful for updating specific fields of an item without needing to retrieve the entire item, modify it, and then put it back into the database.</p>
+<p><a name="basic-usage-update"></a></p>
+<h4 id="basic-usage_5">Basic Usage</h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="p">(</span><span class="nf">base/update</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="s">&quot;item-key&quot;</span><span class="w"> </span><span class="p">{</span><span class="ss">:set</span><span class="w"> </span><span class="p">{</span><span class="ss">:field</span><span class="w"> </span><span class="s">&quot;new-value&quot;</span><span class="p">}})</span>
+</code></pre></div>
+<p>This example updates the field <code>field</code> of the item with the key <code>item-key</code> to the value <code>new-value</code>.</p>
+<p><a name="parameters-update"></a></p>
+<h4 id="parameters_1">Parameters</h4>
+<ul>
+<li><code>db</code>: The database connection object.</li>
+<li><code>key</code>: The key of the item to be updated.</li>
+<li><code>updates</code>: A map containing the updates to be applied to the item. This map can include the following keys:</li>
+<li><code>:set</code>: A map of fields to be updated with new values.</li>
+<li><code>:increment</code>: A map of fields to be incremented by a specified amount.</li>
+<li><code>:append</code>: A map of fields to be appended with a specified value.</li>
+<li><code>:prepend</code>: A map of fields to be prepended with a specified value.</li>
+<li><code>:delete</code>: A list of fields to be deleted.</li>
+</ul>
+<p>For information on the update payload for the <code>base/update</code> function, please refer to the <a href="https://deta.space/docs/en/build/reference/http-api/base#update-item">Deta Base documentation</a>.</p>
+<p><a name="return-value-and-exceptions-update"></a></p>
+<h4 id="return-value-and-exceptions_5">Return Value and Exceptions</h4>
+<p>The <code>update</code> function does not return a meaningful value, as its purpose is to modify an item in the database. If the key is not provided or is empty, or if there is no item with the provided key, the function will throw an <code>Exception</code>.</p>
+<p><a name="example-of-use-update"></a></p>
+<h4 id="example-of-use_1">Example of Use</h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="p">(</span><span class="nf">base/update</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="s">&quot;user-123&quot;</span><span class="w"> </span><span class="p">{</span><span class="ss">:set</span><span class="w"> </span><span class="p">{</span><span class="ss">:name</span><span class="w"> </span><span class="s">&quot;New Name&quot;</span><span class="w"> </span><span class="ss">:age</span><span class="w"> </span><span class="mi">31</span><span class="p">}</span><span class="w"> </span><span class="ss">:increment</span><span class="w"> </span><span class="p">{</span><span class="ss">:score</span><span class="w"> </span><span class="mi">1</span><span class="p">}})</span>
+</code></pre></div>
+<p>This example updates the <code>name</code> field of the item with the key <code>user-123</code> to <code>New Name</code>, sets the <code>age</code> field to <code>31</code>, and increments the <code>score</code> field by <code>1</code>.</p>
 <p><a name="use-cases"></a></p>
 <h3 id="use-cases">Use Cases</h3>
 <p><a name="data-insertion"></a></p>
 <h4 id="data-insertion">Data Insertion</h4>
 <p>The <code>put</code> function's ability to accept any type of data makes it versatile for various use cases. Here are examples of inserting various types of data:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="p">(</span><span class="nf">base/put</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="p">{</span><span class="ss">:name</span><span class="w"> </span><span class="s">&quot;John Doe&quot;</span><span class="w"> </span><span class="ss">:age</span><span class="w"> </span><span class="mi">30</span><span class="p">})</span><span class="w"> </span><span class="c1">; Inserting a map</span>
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="p">(</span><span class="nf">base/put</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="s">&quot;Hello, World!&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">; Inserting a string</span>
-<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="p">(</span><span class="nf">base/put</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="mi">42</span><span class="p">)</span><span class="w"> </span><span class="c1">; Inserting an integer</span>
-<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="p">(</span><span class="nf">base/put</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="mf">3.14</span><span class="p">)</span><span class="w"> </span><span class="c1">; Inserting a float</span>
-<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="p">(</span><span class="nf">base/put</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="nv">true</span><span class="p">)</span><span class="w"> </span><span class="c1">; Inserting a boolean</span>
-<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="p">(</span><span class="nf">base/put</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="nv">nil</span><span class="p">)</span><span class="w"> </span><span class="c1">; Inserting nil</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="p">(</span><span class="nf">base/put</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="p">{</span><span class="ss">:name</span><span class="w"> </span><span class="s">&quot;John Doe&quot;</span><span class="w"> </span><span class="ss">:age</span><span class="w"> </span><span class="mi">30</span><span class="p">})</span><span class="w"> </span><span class="c1">; Inserting a map</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="p">(</span><span class="nf">base/put</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="s">&quot;Hello, World!&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">; Inserting a string</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="p">(</span><span class="nf">base/put</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="mi">42</span><span class="p">)</span><span class="w"> </span><span class="c1">; Inserting an integer</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="p">(</span><span class="nf">base/put</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="mf">3.14</span><span class="p">)</span><span class="w"> </span><span class="c1">; Inserting a float</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="p">(</span><span class="nf">base/put</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="nv">true</span><span class="p">)</span><span class="w"> </span><span class="c1">; Inserting a boolean</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="p">(</span><span class="nf">base/put</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="nv">nil</span><span class="p">)</span><span class="w"> </span><span class="c1">; Inserting nil</span>
 </code></pre></div>
 <p>You can also use the <code>base/insert</code> command to insert data. The difference between <code>base/put</code> and <code>base/insert</code> is that <code>base/put</code> will insert data and update if the key already exists, while <code>base/insert</code> will throw an exception if the key already exists.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="p">(</span><span class="nf">base/insert</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="p">{</span><span class="ss">:name</span><span class="w"> </span><span class="s">&quot;John Doe&quot;</span><span class="w"> </span><span class="ss">:age</span><span class="w"> </span><span class="mi">30</span><span class="p">})</span><span class="w"> </span><span class="c1">; Inserting a map</span>
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="p">(</span><span class="nf">base/insert</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="s">&quot;Hello, World!&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">; Inserting a string</span>
-<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="p">(</span><span class="nf">base/insert</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="mi">42</span><span class="p">)</span><span class="w"> </span><span class="c1">; Inserting an integer</span>
-<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="p">(</span><span class="nf">base/insert</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="mf">3.14</span><span class="p">)</span><span class="w"> </span><span class="c1">; Inserting a float</span>
-<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="p">(</span><span class="nf">base/insert</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="nv">true</span><span class="p">)</span><span class="w"> </span><span class="c1">; Inserting a boolean</span>
-<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="p">(</span><span class="nf">base/insert</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="nv">nil</span><span class="p">)</span><span class="w"> </span><span class="c1">; Inserting nil</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="p">(</span><span class="nf">base/insert</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="p">{</span><span class="ss">:name</span><span class="w"> </span><span class="s">&quot;John Doe&quot;</span><span class="w"> </span><span class="ss">:age</span><span class="w"> </span><span class="mi">30</span><span class="p">})</span><span class="w"> </span><span class="c1">; Inserting a map</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="p">(</span><span class="nf">base/insert</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="s">&quot;Hello, World!&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">; Inserting a string</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="p">(</span><span class="nf">base/insert</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="mi">42</span><span class="p">)</span><span class="w"> </span><span class="c1">; Inserting an integer</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="p">(</span><span class="nf">base/insert</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="mf">3.14</span><span class="p">)</span><span class="w"> </span><span class="c1">; Inserting a float</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="p">(</span><span class="nf">base/insert</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="nv">true</span><span class="p">)</span><span class="w"> </span><span class="c1">; Inserting a boolean</span>
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="p">(</span><span class="nf">base/insert</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="nv">nil</span><span class="p">)</span><span class="w"> </span><span class="c1">; Inserting nil</span>
 </code></pre></div>
 <p><a name="data-retrieval"></a></p>
 <h4 id="data-retrieval">Data Retrieval</h4>
 <p>To retrieve data from the database, you can use the <code>get</code> function. Here's an example of how to retrieve an item by its key:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="p">(</span><span class="nf">base/get</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="s">&quot;user-123&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="p">(</span><span class="nf">base/get</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="s">&quot;user-123&quot;</span><span class="p">)</span>
 </code></pre></div>
 <p><a name="data-removal"></a></p>
 <h4 id="data-removal">Data Removal</h4>
 <p>The <code>delete</code> function is useful for removing specific items from the database. Here's an example of how you can use this function to remove an item:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="p">(</span><span class="nf">base/delete</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="s">&quot;item-key&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">; Removes the item with the key &quot;item-key&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="p">(</span><span class="nf">base/delete</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="s">&quot;item-key&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">; Removes the item with the key &quot;item-key&quot;</span>
 </code></pre></div>
 <p><a name="data-fetching"></a></p>
 <h4 id="data-fetching">Data Fetching</h4>
 <p>To fetching data from the Deta Base, you can use the <code>fetch</code> function. Here's an example of how to fetch an item by its name:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="p">(</span><span class="nf">base/fetch</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="p">{</span><span class="ss">:name</span><span class="w"> </span><span class="s">&quot;John Doe&quot;</span><span class="p">})</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="p">(</span><span class="nf">base/fetch</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="p">{</span><span class="ss">:name</span><span class="w"> </span><span class="s">&quot;John Doe&quot;</span><span class="p">})</span>
+</code></pre></div>
+<p><a name="data-updating"></a></p>
+<h4 id="data-updating">Data Updating</h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="p">(</span><span class="nf">base/update</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="s">&quot;key&quot;</span><span class="w"> </span><span class="p">{</span><span class="ss">:set</span><span class="w"> </span><span class="p">{</span><span class="ss">:name</span><span class="w"> </span><span class="s">&quot;John&quot;</span><span class="w"> </span><span class="ss">:age</span><span class="w"> </span><span class="mi">31</span><span class="w"> </span><span class="ss">:books</span><span class="w"> </span><span class="p">[]}})</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="p">(</span><span class="nf">base/update</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="s">&quot;key&quot;</span><span class="w"> </span><span class="p">{</span><span class="ss">:increment</span><span class="w"> </span><span class="p">{</span><span class="ss">:age</span><span class="w"> </span><span class="mi">1</span><span class="p">}})</span>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="p">(</span><span class="nf">base/update</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="s">&quot;key&quot;</span><span class="w"> </span><span class="p">{</span><span class="ss">:append</span><span class="w"> </span><span class="p">{</span><span class="ss">:books</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;A Book by John Doe&quot;</span>,<span class="w"> </span><span class="s">&quot;Another Book By John Doe&quot;</span><span class="p">]}})</span>
 </code></pre></div>
 
 
