@@ -4,7 +4,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Documentation](https://img.shields.io/badge/MKDocs-Documentation-green.svg)](https://adaiasmagdiel.github.io/deta-clojure/)
 
-Deta is a Clojure library designed to simplify interactions with the Deta database. It provides a straightforward way to initialize a database connection and perform basic operations such as inserting data. This library is ideal for developers looking to integrate Deta database functionality into their Clojure applications.
+Deta is a Clojure library designed to simplify interactions with the Deta Base and Deta Drive. It provides a straightforward way to initialize a service connection and perform operations. This library is ideal for developers looking to integrate Deta Space services functionality into their Clojure applications.
 
 ## Table of Contents
 
@@ -43,11 +43,11 @@ The Deta Base API provides a range of functionalities for data manipulation. The
 -   [x] **Insert**: Insertion of a new object into the database.
 -   [x] **Fetch**: Retrieval of objects based on specific criteria.
 -   [x] **Delete**: Removal of an object from the database.
+-   [x] **Update**: Update of an existing object in the database.
 
 The remaining functions to be implemented are:
 
 -   [ ] **Put Many**: Insertion of multiple objects into the database at once.
--   [ ] **Update**: Update of an existing object in the database.
 
 ### Deta Drive
 
@@ -87,7 +87,7 @@ To fully understand how to use this software, referring to the comprehensive doc
 This library is now available as a dependency. You can add it to your project using Leiningen/Boot by including the following in your `project.clj` dependencies:
 
 ```clojure
-[com.adaiasmagdiel/deta "0.0.5"]
+[com.adaiasmagdiel/deta "0.0.6"]
 ```
 
 For more installation methods, such as `Clojure CLI/deps.edn`, `Gradle`, and `Maven`, please refer to the [installation](https://adaiasmagdiel.github.io/deta-clojure/#installation) section of our documentation.
@@ -129,9 +129,9 @@ Please refer to the [documentation](https://adaiasmagdiel.github.io/deta-clojure
 #### Fetching Data
 
 ```clojure
-(fetch db) ; Fetch all records
-(fetch db {:name "Jane Doe"}) ; Fetch only records with name = "Jane Doe"
-(fetch db {:name "Jane Doe"} {:limit 1 :desc true}) ; Use parameters to modify fetching
+(base/fetch db) ; Fetch all records
+(base/fetch db {:name "Jane Doe"}) ; Fetch only records with name = "Jane Doe"
+(base/fetch db {:name "Jane Doe"} {:limit 1 :desc true}) ; Use parameters to modify fetching
 ```
 
 For more detailed usage instructions and examples, please refer to the [usage](https://adaiasmagdiel.github.io/deta-clojure/usage/#getting-started) section of our documentation.
