@@ -22,9 +22,11 @@ Deta is a Clojure library designed to simplify interactions with the Deta Base a
         -   [Retrieving Data](#retrieving-data)
         -   [Deleting Data](#deleting-data)
         -   [Fetching Data](#deleting-data)
+        -   [Updating Data](#updating-data)
 -   [Testing](#testing)
     -   [Windows](#windows)
     -   [Linux/MacOS](#linuxmacos)
+    -   [Coverage](#coverage)
 -   [Contributing](#contributing)
 -   [License](#license)
 -   [Contact](#contact)
@@ -134,6 +136,16 @@ Please refer to the [documentation](https://adaiasmagdiel.github.io/deta-clojure
 (base/fetch db {:name "Jane Doe"} {:limit 1 :desc true}) ; Use parameters to modify fetching
 ```
 
+#### Updating Data
+
+```clojure
+(base/update db "key" {:set {:name "John" :age 31 :books []}})
+(base/update db "key" {:increment {:age 1}})
+(base/update db "key" {:append {:books ["A Book by John Doe", "Another Book By John Doe"]}})
+```
+
+For information on the update payload for the `base/update` function, please refer to the [Deta Base documentation](https://deta.space/docs/en/build/reference/http-api/base#update-item).
+
 For more detailed usage instructions and examples, please refer to the [usage](https://adaiasmagdiel.github.io/deta-clojure/usage/#getting-started) section of our documentation.
 
 ## Testing
@@ -155,6 +167,14 @@ lein test
 ```
 
 Replace `your_deta_key_here` with your actual Deta key.
+
+### Coverage
+
+This project includes a coverage tool that allows you to easily run test coverage reports. To generate coverage reports for tests, simply enter the following command:
+
+```bash
+lein cloverage
+```
 
 ## Contributing
 
