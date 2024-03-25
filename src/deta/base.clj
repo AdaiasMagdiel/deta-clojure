@@ -100,3 +100,22 @@
              items (clojure.core/get json-data "items")]
          {:count count :last last :items items})
        :else {:count 0 :last nil :items []}))))
+
+(defn update [db key updates]
+  (when (or (nil? key) (empty? key))
+    (throw (Exception. "No project key provided")))
+
+  (let [payload (if (:set updates) updates (assoc updates :set {}))
+        payload (if (:increment payload) payload (assoc payload :increment {}))
+        payload (if (:append payload) payload (assoc payload :append {}))
+        payload (if (:prepend payload) payload (assoc payload :prepend {}))
+        payload (if (:delete payload) payload (assoc payload :delete []))
+        response (client/patch (str (:base-url db) "/items/" key)
+                   {:body (json/write-str payload)
+                    :content-type :json
+                    :headers {"X-API-Key" (:deta-key db)}
+                    :throw-exceptions false})
+        status (:status response)]
+    (if (= 200 status)
+      nil
+      (throw (Exception. (str "There's no item with key \"" key "\"."))))))
