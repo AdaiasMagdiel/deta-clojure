@@ -13,12 +13,12 @@
 
 (defn teardown []
   (println "Cleaning database...")
-  (doseq [key [
-               "put-test-1" "put-test-2" "put-test-3" "put-test-4"
+  (doseq [key ["put-test-1" "put-test-2" "put-test-3" "put-test-4"
                "get-test-1"
                "delete-test-1" "delete-test-2" "delete-test-3" "delete-test-4"
                "insert-test-1" "insert-test-2" "insert-test-3" "insert-test-4" "insert-test-5"
-               "fetch-test-1" "fetch-test-2" "fetch-test-3" "fetch-test-4" "fetch-test-5" "fetch-test-6"]]
+               "fetch-test-1" "fetch-test-2" "fetch-test-3" "fetch-test-4" "fetch-test-5" "fetch-test-6"
+               "update-test-1" "update-test-2" "update-test-3" "update-test-4" "update-test-5" "update-test-6" "update-test-7" "update-test-8"]]
     (let [db (base/base (deta-key-test) key)
           res (base/fetch db)]
       (doseq [item (:items res)]
@@ -92,7 +92,7 @@
           res (base/get db "this-key-non-exists")]
       (is (nil? res))))
 
-  (testing "get throws exception´with non-valid key"
+  (testing "get throws exception with non-valid key"
     (let [db (base/base (deta-key-test) "get-test-1")]
       (is (thrown? Exception (base/get db nil)))
       (is (thrown? Exception (base/get db ""))))))
@@ -110,7 +110,7 @@
           res (base/delete db "this-should-be-inexistent")]
       (is (nil? res))))
 
-  (testing "delete throws exception´with non-valid key"
+  (testing "delete throws exception with non-valid key"
     (let [db (base/base (deta-key-test) "delete-test-3")]
       (is (thrown? Exception (base/delete db nil)))
       (is (thrown? Exception (base/delete db ""))))))
@@ -217,3 +217,47 @@
       (is (contains? res :last))
       (is (contains? res :items))
       (is (= (:count res) 3)))))
+
+(deftest update-test
+  (testing "update throws exception with non-existent key"
+    (let [db (base/base (deta-key-test) "update-test-1")]
+      (is (thrown? Exception (base/update db "non-existent" {:set {}})))))
+
+  (testing "update throws exception with empty key"
+    (let [db (base/base (deta-key-test) "update-test-2")]
+      (is (thrown? Exception (base/update db "" {:set {}})))))
+  
+  (testing "update should throws exception if updates is empty"
+    (let [db (base/base (deta-key-test) "update-test-3")
+          _ (base/put db {:a 1 :b 2} "update-test-3.1")]
+      (is (thrown? Exception (base/update db "update-test-3.1" {})))))
+
+  (testing "update should update with :set"
+    (let [db (base/base (deta-key-test) "update-test-4")
+          _ (base/put db {:a 1 :b 2} "update-test-4.1")]
+      (is (nil? (base/update db "update-test-4.1" {:set {:a 2 :b 3}})))
+      (is (= {"a" 2 "b" 3 "key" "update-test-4.1"} (base/get db "update-test-4.1")))))
+
+  (testing "update should update with :increment"
+    (let [db (base/base (deta-key-test) "update-test-5")
+          _ (base/put db {:a 21} "update-test-5.1")]
+      (is (nil? (base/update db "update-test-5.1" {:increment {:a 21}})))
+      (is (= {"a" 42 "key" "update-test-5.1"} (base/get db "update-test-5.1")))))
+
+  (testing "update should update with :append"
+    (let [db (base/base (deta-key-test) "update-test-6")
+          _ (base/put db {:text ["lorem"]} "update-test-6.1")]
+      (is (nil? (base/update db "update-test-6.1" {:append {:text ["ipsum"]}})))
+      (is (= {"text" ["lorem" "ipsum"] "key" "update-test-6.1"} (base/get db "update-test-6.1")))))
+
+  (testing "update should update with :prepend"
+    (let [db (base/base (deta-key-test) "update-test-7")
+          _ (base/put db {:name ["sepiol"]} "update-test-7.1")]
+      (is (nil? (base/update db "update-test-7.1" {:prepend {:name ["sam"]}})))
+      (is (= {"name" ["sam" "sepiol"] "key" "update-test-7.1"} (base/get db "update-test-7.1")))))
+
+  (testing "update should update with :delete as list"
+    (let [db (base/base (deta-key-test) "update-test-8")
+          _ (base/put db {:name "John" :age 31 :mood "happy"} "update-test-8.1")]
+      (is (nil? (base/update db "update-test-8.1" {:delete ["age" "mood"]})))
+      (is (= {"name" "John" "key" "update-test-8.1"} (base/get db "update-test-8.1"))))))
