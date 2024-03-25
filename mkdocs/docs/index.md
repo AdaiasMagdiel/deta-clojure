@@ -60,6 +60,7 @@ Deta is a Clojure library designed to simplify interactions with the Deta databa
    -  [Delete](./reference.md#delete)
    -  [Insert](./reference.md#insert)
    -  [Fetch](./reference.md#fetch)
+   -  [Update](./reference.md#update)
 
 ## Project Progress
 
@@ -75,11 +76,11 @@ The Deta Base API provides a range of functionalities for data manipulation. The
 -  [x] **Insert**: Insertion of a new object into the database.
 -  [x] **Fetch**: Retrieval of objects based on specific criteria.
 -  [x] **Delete**: Removal of an object from the database.
+-  [x] **Update**: Update of an existing object in the database.
 
 The remaining functions to be implemented are:
 
 -  [ ] **Put Many**: Insertion of multiple objects into the database at once.
--  [ ] **Update**: Update of an existing object in the database.
 
 ### Deta Drive
 
@@ -114,7 +115,7 @@ This project is under continuous development, with the goal of providing a robus
 Add the following dependency to your `project.clj`:
 
 ```clojure
-[com.adaiasmagdiel/deta "0.0.5"]
+[com.adaiasmagdiel/deta "0.0.6"]
 ```
 
 <a name="clojure-clidepsedn"></a>
@@ -124,7 +125,7 @@ Add the following dependency to your `project.clj`:
 Add the following dependency to your `deps.edn`:
 
 ```clojure
-com.adaiasmagdiel/deta {:mvn/version "0.0.5"}
+com.adaiasmagdiel/deta {:mvn/version "0.0.6"}
 ```
 
 <a name="gradle"></a>
@@ -134,7 +135,7 @@ com.adaiasmagdiel/deta {:mvn/version "0.0.5"}
 Add the following dependency to your `build.gradle`:
 
 ```gradle
-implementation("com.adaiasmagdiel:deta:0.0.5")
+implementation("com.adaiasmagdiel:deta:0.0.6")
 ```
 
 <a name="maven"></a>
@@ -147,7 +148,7 @@ Add the following dependency to your `pom.xml`:
 <dependency>
  <groupId>com.adaiasmagdiel</groupId>
  <artifactId>deta</artifactId>
- <version>0.0.5</version>
+ <version>0.0.6</version>
 </dependency>
 ```
 
@@ -182,3 +183,11 @@ lein test
 ```
 
 Replace `your_deta_key_here` with your actual Deta key.
+
+### Coverage
+
+This project includes a coverage tool that allows you to easily run test coverage reports. To generate coverage reports for tests, simply enter the following command:
+
+```bash
+lein cloverage
+```
