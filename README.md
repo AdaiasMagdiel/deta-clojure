@@ -43,11 +43,11 @@ The Deta Base API provides a range of functionalities for data manipulation. The
 -   [x] **Insert**: Insertion of a new object into the database.
 -   [x] **Fetch**: Retrieval of objects based on specific criteria.
 -   [x] **Delete**: Removal of an object from the database.
+-   [x] **Update**: Update of an existing object in the database.
 
 The remaining functions to be implemented are:
 
 -   [ ] **Put Many**: Insertion of multiple objects into the database at once.
--   [ ] **Update**: Update of an existing object in the database.
 
 ### Deta Drive
 
