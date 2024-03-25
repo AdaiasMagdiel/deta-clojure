@@ -30,11 +30,17 @@ This section offers an overview of the `deta` library, designed to interact with
       -  [Example of Use](#example-of-use)
       -  [Return Value and Exceptions](#return-value-and-exceptions-4)
       -  [Example with Query Parameters](#example-with-query-parameters)
+   -  [Using the `update` Function](#using-the-update-function)
+      -  [Basic Usage](#basic-usage-update)
+      -  [Parameters](#parameters-update)
+      -  [Return Value and Exceptions](#return-value-and-exceptions-update)
+      -  [Example of Use](#example-of-use-update)
    -  [Use Cases](#use-cases)
       -  [Data Insertion](#data-insertion)
       -  [Data Retrieval](#data-retrieval)
       -  [Data Removal](#data-removal)
       -  [Data Fetching](#data-fetching)
+      -  [Data Updating](#data-updating)
 
 <a name="getting-started"></a>
 
@@ -234,6 +240,53 @@ The `fetch` function returns a map containing the number of items found (`:count
 ; Returns: {:count 5 :last "user-123" :items [{:name "Gulliver" :age 35} ...]}
 ```
 
+<a name="using-the-update-function"></a>
+
+### Using the `update` Function
+
+The `update` function allows you to modify an existing item in the database by providing a key and a map of updates. This function is particularly useful for updating specific fields of an item without needing to retrieve the entire item, modify it, and then put it back into the database.
+
+<a name="basic-usage-update"></a>
+
+#### Basic Usage
+
+```clojure
+(base/update db "item-key" {:set {:field "new-value"}})
+```
+
+This example updates the field `field` of the item with the key `item-key` to the value `new-value`.
+
+<a name="parameters-update"></a>
+
+#### Parameters
+
+-  `db`: The database connection object.
+-  `key`: The key of the item to be updated.
+-  `updates`: A map containing the updates to be applied to the item. This map can include the following keys:
+-  `:set`: A map of fields to be updated with new values.
+-  `:increment`: A map of fields to be incremented by a specified amount.
+-  `:append`: A map of fields to be appended with a specified value.
+-  `:prepend`: A map of fields to be prepended with a specified value.
+-  `:delete`: A list of fields to be deleted.
+
+For information on the update payload for the `base/update` function, please refer to the [Deta Base documentation](https://deta.space/docs/en/build/reference/http-api/base#update-item).
+
+<a name="return-value-and-exceptions-update"></a>
+
+#### Return Value and Exceptions
+
+The `update` function does not return a meaningful value, as its purpose is to modify an item in the database. If the key is not provided or is empty, or if there is no item with the provided key, the function will throw an `Exception`.
+
+<a name="example-of-use-update"></a>
+
+#### Example of Use
+
+```clojure
+(base/update db "user-123" {:set {:name "New Name" :age 31} :increment {:score 1}})
+```
+
+This example updates the `name` field of the item with the key `user-123` to `New Name`, sets the `age` field to `31`, and increments the `score` field by `1`.
+
 <a name="use-cases"></a>
 
 ### Use Cases
@@ -292,4 +345,14 @@ To fetching data from the Deta Base, you can use the `fetch` function. Here's an
 
 ```clojure
 (base/fetch db {:name "John Doe"})
+```
+
+<a name="data-updating"></a>
+
+#### Data Updating
+
+```clojure
+(base/update db "key" {:set {:name "John" :age 31 :books []}})
+(base/update db "key" {:increment {:age 1}})
+(base/update db "key" {:append {:books ["A Book by John Doe", "Another Book By John Doe"]}})
 ```
